@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pentaminds.netlify.app/sitemap.xml
+Sitemap: https://pentaminds.in/sitemap.xml
