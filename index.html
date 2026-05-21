@@ -2185,42 +2185,6 @@ if (MAINTENANCE_MODE) {
       });
     });
 
-const SHEET_ID = "1_c8ibZezIYRlO6Yj5LIKGOiJqDeu7KuNuKhNi09wx2c";
-const API_KEY = "AIzaSyChTW-IUhMJ6HhhFaXjdmibNOwL8KjKM5U";
-const SHEET_NAME = "Form Responses 1";
-const pulseSurveyCounter = () => {
-  liveCounterNumber.classList.remove("pulse");
-  void liveCounterNumber.offsetWidth;
-   liveCounterNumber.classList.add("pulse");
-
-};
-
-async function fetchSurveyCount() {
-try {
-  const response = await fetch(
-      `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${encodeURIComponent(SHEET_NAME)}?key=${API_KEY}`
-    );
-
-    const data = await response.json();
-    if (!data.values || data.values.length === 0) {
-      liveCounterNumber.textContent = "0";
-      return;
-
-    }
-
-    const responseCount = data.values.length - 1;
-    liveCounterNumber.textContent = `${responseCount}+`;
-    pulseSurveyCounter();
-
-  } catch (error) {
-    console.error("Survey counter fetch failed:", error);
-    liveCounterNumber.textContent = "—";
-
-  }
-
-}
-
-fetchSurveyCount();
     
     const getDotCount = () => {
       const area = canvasWidth * canvasHeight;
