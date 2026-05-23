@@ -41,7 +41,7 @@
       "sameAs": [
         "https://www.linkedin.com/company/pentaminds-research"
       ]
-      }
+      },
       "areaServed": {
         "@type": "Country",
         "name": "India"
@@ -2012,6 +2012,8 @@ body.admin-mode .avatar-reset {
             <a class="linkedin" href="https://www.linkedin.com/in/shivani-singh-teacher-educator/" aria-label="Shivani Singh LinkedIn">in</a>
             <button class="avatar-reset" type="button" disabled>Reset photo</button>
           </article>
+        </div>
+        <div class="associate-row">
         <article class="associate-card reveal">
           <span class="avatar" data-initials="P">
              <button class="avatar-upload" type="button" aria-label="Upload photo for Praveen K K"></button>
@@ -2615,7 +2617,38 @@ if (MAINTENANCE_MODE) {
         if (event.target === adminModal) closeAdminModal();
       });
     });
+document.querySelectorAll('.avatar').forEach((avatar) => {
+  const uploadBtn = avatar.querySelector('.avatar-upload');
+  const fileInput = avatar.querySelector('.avatar-input');
 
+  if (uploadBtn && fileInput) {
+    uploadBtn.addEventListener('click', () => {
+      fileInput.click();
+    });
+
+    fileInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+
+      if (!file) return;
+
+      const reader = new FileReader();
+
+      reader.onload = function(e) {
+        let img = avatar.querySelector('img');
+
+        if (!img) {
+          img = document.createElement('img');
+          avatar.appendChild(img);
+        }
+
+        img.src = e.target.result;
+      };
+
+      reader.readAsDataURL(file);
+    });
+  }
+});
+    
   </script>
 
 </div>
