@@ -889,105 +889,6 @@ body.admin-mode .avatar-reset {
       color: rgba(255, 255, 255, 0.74);
     }
 
-    .timeline-section {
-      background: var(--white);
-    }
-
-    .timeline-heading {
-      text-align: center;
-    }
-
-    .timeline-heading .orange-rule {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 34px;
-      margin: 54px auto 0;
-      max-width: 980px;
-      position: relative;
-    }
-
-    .timeline::before {
-      background: rgba(232, 119, 34, 0.26);
-      border-radius: 999px;
-      content: "";
-      height: 100%;
-      left: 50%;
-      position: absolute;
-      top: 0;
-      transform: translateX(-50%);
-      width: 3px;
-    }
-
-    .timeline-entry {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 132px;
-      position: relative;
-    }
-
-    .timeline-entry::before {
-      background: var(--orange);
-      border: 5px solid var(--white);
-      border-radius: 50%;
-      box-shadow: 0 0 0 1px rgba(232, 119, 34, 0.22);
-      content: "";
-      height: 18px;
-      left: 50%;
-      position: absolute;
-      top: 24px;
-      transform: translateX(-50%);
-      width: 18px;
-      z-index: 2;
-    }
-
-    .timeline-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: 0 12px 34px rgba(13, 33, 69, 0.07);
-      padding: 24px;
-      transition: transform 220ms ease, box-shadow 220ms ease;
-    }
-
-    .timeline-card:hover {
-      box-shadow: var(--shadow);
-      transform: translateY(-4px);
-    }
-
-    .timeline-entry:nth-child(odd) .timeline-card {
-      grid-column: 1;
-      margin-right: 48px;
-      text-align: right;
-    }
-
-    .timeline-entry:nth-child(even) .timeline-card {
-      grid-column: 2;
-      margin-left: 48px;
-    }
-
-    .timeline-date {
-      color: var(--navy);
-      display: block;
-      font-weight: 900;
-      margin-bottom: 6px;
-    }
-
-    .timeline-card h3 {
-      color: var(--navy);
-      font-size: 1.18rem;
-      line-height: 1.35;
-      margin-bottom: 10px;
-    }
-
-    .timeline-card p {
-      color: var(--muted);
-      font-size: 0.96rem;
-      line-height: 1.65;
-    }
 
     .toolkit-section {
       background: var(--white);
@@ -1293,27 +1194,6 @@ body.admin-mode .avatar-reset {
         gap: 26px;
       }
 
-      .timeline::before {
-        left: 13px;
-        transform: none;
-      }
-
-      .timeline-entry {
-        display: block;
-        min-height: 0;
-        padding-left: 42px;
-      }
-
-      .timeline-entry::before {
-        left: 13px;
-        top: 22px;
-      }
-
-      .timeline-entry:nth-child(odd) .timeline-card,
-      .timeline-entry:nth-child(even) .timeline-card {
-        margin: 0;
-        text-align: left;
-      }
     }
 
     @media (max-width: 680px) {
@@ -1578,6 +1458,337 @@ body.admin-mode .avatar-reset {
     .admin-error.visible {
       display: block;
     }
+  
+/* ── Project Card ─────────────────────────── */
+.project-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(13, 33, 69, 0.07);
+  margin-top: 48px;
+  overflow: hidden;
+  transition: box-shadow 220ms ease, transform 220ms ease;
+}
+.project-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+.project-card-header {
+  background: var(--navy);
+  color: var(--white);
+  padding: 32px 36px;
+  position: relative;
+}
+.project-card-header::after {
+  background: var(--orange);
+  bottom: 0;
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  width: 82px;
+}
+.project-number {
+  color: var(--orange);
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.project-title {
+  color: var(--white);
+  font-family: var(--heading);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+.project-tagline {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.project-body {
+  padding: 36px;
+}
+.project-meta-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin-bottom: 28px;
+}
+.project-meta-item {
+  border-left: 3px solid var(--orange);
+  padding-left: 14px;
+}
+.project-meta-label {
+  color: var(--muted);
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+.project-meta-value {
+  color: var(--navy);
+  font-size: 0.93rem;
+  font-weight: 700;
+}
+.project-overview {
+  color: #4a4f5b;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+.project-sections {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-bottom: 28px;
+}
+.project-section-block {
+  background: var(--light);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.project-section-block h4 {
+  color: var(--navy);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.project-section-block p {
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.65;
+}
+.project-affiliations {
+  border-top: 1px solid var(--line);
+  margin-top: 24px;
+  padding-top: 20px;
+}
+.project-affiliations-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.affiliation-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.affiliation-chip {
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--navy);
+  display: inline-flex;
+  font-size: 0.85rem;
+  font-weight: 700;
+  gap: 8px;
+  padding: 8px 14px;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+.affiliation-chip:hover {
+  border-color: var(--orange);
+  box-shadow: 0 4px 12px rgba(232, 119, 34, 0.14);
+}
+.affiliation-chip-dot {
+  background: var(--orange);
+  border-radius: 50%;
+  flex-shrink: 0;
+  height: 8px;
+  width: 8px;
+}
+.project-timeline-strip {
+  border-top: 1px solid var(--line);
+  margin-top: 24px;
+  padding-top: 22px;
+}
+.project-timeline-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.timeline-strip-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.timeline-strip-item {
+  align-items: flex-start;
+  background: var(--light);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  flex: 1 1 160px;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+}
+.timeline-strip-date {
+  color: var(--orange);
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+.timeline-strip-event {
+  color: var(--navy);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+@media (max-width: 680px) {
+  .project-body { padding: 22px 18px; }
+  .project-card-header { padding: 24px 18px; }
+  .project-meta-grid { grid-template-columns: 1fr 1fr; }
+}
+
+
+/* ── Inline Project Cards (main site) ──────── */
+.projects-section {
+  background: var(--white);
+}
+.projects-section-header {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  margin-bottom: 8px;
+}
+.projects-ecosystem-cta {
+  background: var(--light);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--orange);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+}
+.projects-ecosystem-cta p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+.projects-ecosystem-cta .btn {
+  font-size: 0.9rem;
+  min-height: 44px;
+  padding: 10px 18px;
+}
+.nav-divider {
+  background: var(--line);
+  height: 18px;
+  width: 1px;
+  margin: 0 4px;
+  align-self: center;
+  display: inline-block;
+}
+.site-header.scrolled .nav-divider {
+  background: rgba(255, 255, 255, 0.18);
+}
+.nav-link-ecosystem {
+  color: var(--orange) !important;
+  font-size: 0.82rem !important;
+}
+.site-header.scrolled .nav-link-ecosystem {
+  color: var(--orange) !important;
+}
+.section-portal-cta {
+  border-top: 1px solid var(--line);
+  margin-top: 48px;
+  padding-top: 32px;
+}
+.section-portal-cta-inner {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+.section-portal-cta-inner p {
+  color: var(--muted);
+  flex: 1 1 300px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  max-width: 560px;
+}
+.section-portal-cta-inner .btn {
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  min-height: 44px;
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+.research-section .section-portal-cta {
+  border-top-color: rgba(255, 255, 255, 0.16);
+}
+.research-section .section-portal-cta-inner p {
+  color: rgba(255, 255, 255, 0.68);
+}
+@media (max-width: 920px) {
+  .nav-divider { display: none; }
+}
+@media (max-width: 720px) {
+  .projects-section-header {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 680px) {
+  .section-portal-cta-inner { flex-direction: column; align-items: flex-start; }
+  .section-portal-cta-inner .btn { width: 100%; }
+}
+
+
+.redirect-overlay {
+  align-items: center;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  inset: 0;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  transition: opacity 300ms ease;
+  z-index: 9998;
+}
+.redirect-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.redirect-inner {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.redirect-spinner {
+  animation: redirectSpin 700ms linear infinite;
+  border: 3px solid var(--line);
+  border-radius: 50%;
+  border-top-color: var(--orange);
+  height: 40px;
+  width: 40px;
+}
+@keyframes redirectSpin { to { transform: rotate(360deg); } }
+.redirect-label {
+  color: var(--navy);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
   </style>
 </head>
 <body class="is-loading">
@@ -1632,10 +1843,15 @@ body.admin-mode .avatar-reset {
         <li><a class="nav-link" href="#about">About</a></li>
         <li><a class="nav-link" href="#team">Team</a></li>
         <li><a class="nav-link" href="#research">Research</a></li>
-        <li><a class="nav-link" href="#timeline">Timeline</a></li>
+        <li><a class="nav-link" href="#projects">Projects</a></li>
         <li><a class="nav-link" href="#toolkit">Toolkit</a></li>
         <li><a class="nav-link" href="#survey">Survey</a></li>
         <li><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-divider" aria-hidden="true"></li>
+        <li><a class="nav-link nav-link-ecosystem" href="javascript:void(0)" onclick="redirectTo('https://team.pentaminds.in', 'Opening Team Division…')">Team</a></li>
+        <li><a class="nav-link nav-link-ecosystem" href="javascript:void(0)" onclick="redirectTo('https://research.pentaminds.in', 'Opening Research Division…')">Research ↗</a></li>
+        <li><a class="nav-link nav-link-ecosystem" href="javascript:void(0)" onclick="redirectTo('https://toolkit.pentaminds.in', 'Opening Toolkit Division…')">Toolkit ↗</a></li>
+        <li><a class="nav-link nav-link-ecosystem" href="javascript:void(0)" onclick="redirectTo('https://projects.pentaminds.in', 'Opening Projects Division…')">Projects ↗</a></li>
       </ul>
     </nav>
   </header>
@@ -1783,6 +1999,12 @@ body.admin-mode .avatar-reset {
           <a class="linkedin" href="https://www.linkedin.com/in/vishnupriyan-p-2b5264315/" aria-label="Vishnupriyan P LinkedIn">in</a>
             <button class="avatar-reset" type="button" disabled>Reset photo</button>
         </article>
+        <div class="section-portal-cta reveal">
+          <div class="section-portal-cta-inner">
+            <p>The full team directory, departments, member profiles, and recruitment information live in the Team Division.</p>
+            <button class="btn btn-navy-outline" onclick="redirectTo('https://team.pentaminds.in', 'Opening Team Division…')">Team Division →</button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1832,54 +2054,97 @@ body.admin-mode .avatar-reset {
             <p>NCR — New Delhi</p>
           </article>
         </div>
+        <div class="section-portal-cta reveal">
+          <div class="section-portal-cta-inner">
+            <p>Publications, datasets, research notes, collaboration requests, and full research documentation are in the Research Division.</p>
+            <button class="btn btn-orange" onclick="redirectTo('https://research.pentaminds.in', 'Opening Research Division…')">Research Division →</button>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section timeline-section" id="timeline">
-      <div class="container">
-        <div class="timeline-heading reveal">
-          <h2 class="section-title">Project Timeline</h2>
-          <span class="orange-rule" aria-hidden="true"></span>
+    <section class="section projects-section" id="projects">
+  <div class="container">
+    <div class="projects-section-header reveal">
+      <div class="section-title-col">
+        <h2 class="section-title">Active Projects</h2>
+        <span class="orange-rule" aria-hidden="true"></span>
+        <p class="subtitle">Two research initiatives. One ecosystem.</p>
+      </div>
+      <div class="projects-ecosystem-cta">
+        <p>The Projects Division hosts the full depth of our research — detailed methodology, timeline, affiliations, survey access, and outputs.</p>
+        <button class="btn btn-orange" onclick="redirectTo('https://projects.pentaminds.in', 'Opening Projects Division…')">Explore All Projects →</button>
+      </div>
+    </div>
+    <article class="project-card reveal">
+      <div class="project-card-header">
+        <span class="project-number">PROJECT 01</span>
+        <h3 class="project-title">AI Grand Challenge 2026</h3>
+        <p class="project-tagline">GPAI India Student Community · AI in Indian Higher Education</p>
+      </div>
+      <div class="project-body">
+        <div class="project-meta-grid">
+          <div class="project-meta-item"><span class="project-meta-label">Role</span><span class="project-meta-value">Lead Research Initiative</span></div>
+          <div class="project-meta-item"><span class="project-meta-label">Timeline</span><span class="project-meta-value">March – June 2026</span></div>
+          <div class="project-meta-item"><span class="project-meta-label">Status</span><span class="project-meta-value">Active</span></div>
+          <div class="project-meta-item"><span class="project-meta-label">Output</span><span class="project-meta-value">Policy Brief · Toolkit</span></div>
         </div>
-        <div class="timeline">
-          <article class="timeline-entry reveal">
-            <div class="timeline-card">
-              <span class="timeline-date">March 2026</span>
-              <h3>Registration & Team Formation</h3>
-              <p>Team Penta Minds officially registered for the challenge. Research schema developed and team meetings initiated.</p>
-            </div>
-          </article>
-          <article class="timeline-entry reveal">
-            <div class="timeline-card">
-              <span class="timeline-date">April 2026</span>
-              <h3>Survey Launch & Outreach</h3>
-              <p>Online survey launched. Institution outreach begun across Tamil Nadu. Phase 1 contribution submitted.</p>
-            </div>
-          </article>
-          <article class="timeline-entry reveal">
-            <div class="timeline-card">
-              <span class="timeline-date">April–May 2026</span>
-              <h3>Field Data Collection</h3>
-              <p>Field visits across 9+ institutions in Thanjavur and Trichy. Interviews with students and faculty.</p>
-            </div>
-          </article>
-          <article class="timeline-entry reveal">
-            <div class="timeline-card">
-              <span class="timeline-date">May 2026</span>
-              <h3>Data Compilation</h3>
-              <p>All field and online data consolidated and organised for analysis.</p>
-            </div>
-          </article>
-          <article class="timeline-entry reveal">
-            <div class="timeline-card">
-              <span class="timeline-date">June 2026</span>
-              <h3>Analysis & Final Report</h3>
-              <p>Findings analysed, policy brief and AI Literacy Toolkit finalised and published.</p>
-            </div>
-          </article>
+        <p class="project-overview">The AI Grand Challenge is an international student research competition organised under the Global Partnership on AI (GPAI) and Inria, France. Team Penta Minds is participating through the GPAI India Student Community, conducting original field research on how AI is understood, used, and encountered by students and faculty across Tier 1, Tier 2, and Tier 3 higher education institutions in India. Research outputs will be submitted to the OECD through GPAI policy frameworks.</p>
+        <div class="project-sections">
+          <div class="project-section-block"><h4>Research Direction</h4><p>Investigating the informal learning of AI in Indian higher education — what students know, how they learned it, and what the gaps in formal literacy look like when compared across institution types and geographic regions.</p></div>
+          <div class="project-section-block"><h4>Contribution</h4><p>Producing a structured survey dataset, field visit observations, a Policy Brief on AI in Indian Higher Education, and the Ground-Up AI Literacy Toolkit — all submitted through GPAI to OECD policy channels.</p></div>
+          <div class="project-section-block"><h4>Ecosystem Significance</h4><p>This project is the founding research initiative of Penta Minds. It establishes the team's methodology, field credibility, and output standards for all future research operations.</p></div>
+        </div>
+        <div class="project-affiliations">
+          <p class="project-affiliations-label">Affiliations</p>
+          <div class="affiliation-chips">
+            <a class="affiliation-chip" href="https://www.linkedin.com/company/globalpartnershipai/" target="_blank" rel="noopener"><span class="affiliation-chip-dot"></span>GPAI India Student Community</a>
+            <a class="affiliation-chip" href="https://www.linkedin.com/company/col-cemca" target="_blank" rel="noopener"><span class="affiliation-chip-dot"></span>COL-CEMCA</a>
+            <a class="affiliation-chip" href="https://www.linkedin.com/company/inria" target="_blank" rel="noopener"><span class="affiliation-chip-dot"></span>Inria, France — Organising Body</a>
+            <a class="affiliation-chip" href="https://www.linkedin.com/company/organisation-eco-cooperation-development-organisation-cooperation-developpement-eco" target="_blank" rel="noopener"><span class="affiliation-chip-dot"></span>OECD — Output Audience</a>
+          </div>
+        </div>
+        <div class="project-timeline-strip">
+          <p class="project-timeline-label">Project Timeline</p>
+          <div class="timeline-strip-items">
+            <div class="timeline-strip-item"><span class="timeline-strip-date">March 2026</span><span class="timeline-strip-event">Registration & Team Formation</span></div>
+            <div class="timeline-strip-item"><span class="timeline-strip-date">April 2026</span><span class="timeline-strip-event">Survey Launch & Institution Outreach</span></div>
+            <div class="timeline-strip-item"><span class="timeline-strip-date">April–May 2026</span><span class="timeline-strip-event">Field Data Collection — 9+ Institutions</span></div>
+            <div class="timeline-strip-item"><span class="timeline-strip-date">May 2026</span><span class="timeline-strip-event">Data Compilation & Organisation</span></div>
+            <div class="timeline-strip-item"><span class="timeline-strip-date">June 2026</span><span class="timeline-strip-event">Analysis, Policy Brief & Toolkit Publication</span></div>
+          </div>
         </div>
       </div>
-    </section>
+    </article>
+    <article class="project-card reveal">
+      <div class="project-card-header">
+        <span class="project-number">PROJECT 02</span>
+        <h3 class="project-title">AI as the Hidden Curriculum</h3>
+        <p class="project-tagline">How Learning is Happening Through AI Without Being Taught</p>
+      </div>
+      <div class="project-body">
+        <div class="project-meta-grid">
+          <div class="project-meta-item"><span class="project-meta-label">Role</span><span class="project-meta-value">Principal Investigation</span></div>
+          <div class="project-meta-item"><span class="project-meta-label">Timeline</span><span class="project-meta-value">March – June 2026</span></div>
+          <div class="project-meta-item"><span class="project-meta-label">Stage</span><span class="project-meta-value">Active — Field & Survey Phase</span></div>
+          <div class="project-meta-item"><span class="project-meta-label">Output Type</span><span class="project-meta-value">Research Report · Survey Dataset</span></div>
+        </div>
+        <p class="project-overview">AI as the Hidden Curriculum is the core research inquiry examining how students in Indian higher education are learning to use AI tools informally — outside any structured curriculum or institutional guidance. The central question: what does it mean when an entire generation of students is developing AI competency through trial, error, and peer observation, without the institution acknowledging it? This project generates the primary evidence base for the AI Grand Challenge submission.</p>
+        <div class="project-sections">
+          <div class="project-section-block"><h4>Objective</h4><p>To document the informal AI learning behaviours of students across Tier 1, 2, and 3 institutions and identify the structural gap between how students use AI and what institutions know, acknowledge, or address.</p></div>
+          <div class="project-section-block"><h4>Methodology</h4><p>Field surveys across 9+ institutions in Tamil Nadu and NCR, structured faculty interviews, institutional observation visits across Thanjavur, Trichy, Kumbakonam, and Delhi NCR, supplemented by a national online survey instrument.</p></div>
+          <div class="project-section-block"><h4>Current Stage</h4><p>Active data collection. Field visits complete across Thanjavur and Trichy. Online survey live across Tamil Nadu and Delhi NCR. Data compilation underway as of May 2026.</p></div>
+          <div class="project-section-block"><h4>Upcoming Plans</h4><p>Thematic analysis of survey and field data. Draft policy brief by June 2026. AI Literacy Toolkit finalisation and CC-licensed publication. GPAI submission and OECD routing.</p></div>
+        </div>
+        <p style="color: var(--muted); font-size: 0.88rem; font-style: italic; margin-top: 20px;">Conducted as part of the AI Grand Challenge 2026 · GPAI India Student Community · Inria, France</p>
+        <p style="color: var(--muted); font-size: 0.88rem; margin-top: 16px;">Timeline: follows AI Grand Challenge schedule — see Project 01 above.</p>
+      </div>
+    </article>
+    <div style="margin-top: 40px; text-align: center;" class="reveal">
+      <button class="btn btn-navy-outline" onclick="redirectTo('https://projects.pentaminds.in', 'Opening Projects Division…')">View Full Project Details →</button>
+    </div>
+  </div>
+</section>
 
     <section class="section toolkit-section" id="toolkit">
       <div class="container toolkit-grid">
@@ -1923,6 +2188,12 @@ body.admin-mode .avatar-reset {
             <h3>Co-Creating Your Institution's AI Guidelines</h3>
             <p>Turn local evidence into shared norms.</p>
           </article>
+        </div>
+        <div class="section-portal-cta reveal" style="grid-column: 1 / -1;">
+          <div class="section-portal-cta-inner">
+            <p>The full Toolkit Division hosts prompt libraries, AI resources, documentation, and contribution guidelines.</p>
+            <button class="btn btn-navy-outline" onclick="redirectTo('https://toolkit.pentaminds.in', 'Opening Toolkit Division…')">Toolkit Division →</button>
+          </div>
         </div>
       </div>
     </section>
@@ -1971,10 +2242,14 @@ body.admin-mode .avatar-reset {
         <li><a href="#about">About</a></li>
         <li><a href="#team">Team</a></li>
         <li><a href="#research">Research</a></li>
-        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#toolkit">Toolkit</a></li>
         <li><a href="#survey">Survey</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="javascript:void(0)" onclick="redirectTo('https://team.pentaminds.in', 'Opening Team Division…')">Team ↗</a></li>
+        <li><a href="javascript:void(0)" onclick="redirectTo('https://research.pentaminds.in', 'Opening Research Division…')">Research ↗</a></li>
+        <li><a href="javascript:void(0)" onclick="redirectTo('https://toolkit.pentaminds.in', 'Opening Toolkit Division…')">Toolkit ↗</a></li>
+        <li><a href="javascript:void(0)" onclick="redirectTo('https://projects.pentaminds.in', 'Opening Projects Division…')">Projects ↗</a></li>
       </ul>
       <span style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
   <span>© 2026 Penta Minds</span>
@@ -2000,6 +2275,13 @@ body.admin-mode .avatar-reset {
   </footer>
 
   <script>
+function redirectTo(url, label) {
+  var overlay = document.getElementById('redirect-overlay');
+  var labelEl = document.getElementById('redirect-label');
+  if (labelEl) labelEl.textContent = label || 'Opening portal…';
+  if (overlay) overlay.classList.add('active');
+  setTimeout(function() { window.location.href = url; }, 650);
+}
 const MAINTENANCE_MODE = true;
 const maintenanceEl = document.getElementById("maintenance-mode");
 const mainSiteEl = document.getElementById("main-site");
@@ -2348,5 +2630,11 @@ if (MAINTENANCE_MODE) {
 <button id="admin-access-btn" title="Admin" class="admin-access-btn" aria-label="Admin Access" style="position:fixed;bottom:24px;right:24px;z-index:8999;width:42px;height:42px;border-radius:50%;background:#0D2145;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
 </button>
+<div id="redirect-overlay" class="redirect-overlay" aria-live="polite" role="status">
+  <div class="redirect-inner">
+    <div class="redirect-spinner" aria-hidden="true"></div>
+    <p class="redirect-label" id="redirect-label">Opening portal…</p>
+  </div>
+</div>
 </body>
 </html>
