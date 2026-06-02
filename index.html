@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1854,6 +1855,7 @@ body.admin-mode .avatar-reset {
   font-weight: 700;
 }
 
+  
     .avatar-initials {
       align-items: center;
       color: var(--white);
@@ -1872,7 +1874,7 @@ body.admin-mode .avatar-reset {
       content: "";
       display: none;
     }
-    
+
   </style>
 </head>
 <body class="is-loading">
@@ -1980,13 +1982,12 @@ body.admin-mode .avatar-reset {
         <h2 class="section-title reveal">Meet the Team</h2>
         <span class="orange-rule reveal" style="margin-left:auto;margin-right:auto;" aria-hidden="true"></span>
         <p class="subtitle reveal">Five minds. Two states. One mission.</p>
-<div class="team-grid" id="team-grid-container" aria-label="Core team members">
+        <div class="team-grid" id="team-grid-container" aria-label="Core team members">
           <!-- Dynamically populated from GET /api/team-members -->
         </div>
         <div class="associate-row" id="associates-container" aria-label="Associate members">
           <!-- Dynamically populated from GET /api/team-members -->
         </div>
-        
         <div class="section-portal-cta reveal">
           <div class="section-portal-cta-inner">
             <p>The full team directory, departments, member profiles, and recruitment information live in the Team Division.</p>
@@ -2222,12 +2223,12 @@ body.admin-mode .avatar-reset {
         <li><a href="javascript:void(0)" onclick="redirectTo('https://toolkit.pentaminds.in', 'Opening Toolkit Division…')">Toolkit ↗</a></li>
         <li><a href="javascript:void(0)" onclick="redirectTo('https://projects.pentaminds.in', 'Opening Projects Division…')">Projects ↗</a></li>
         <li><a href="javascript:void(0)" onclick="redirectTo('https://vignesh.pentaminds.in', 'Opening Founder Division…')">Founder ↗</a></li>
-        <li><a href="#ecosystem">Ecosystem</a></li>
         <li><a href="/brand-identity/">Brand Identity & Logo Usage</a></li>
+        <li><a href="#ecosystem">Ecosystem</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <span style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
-  <span>© 2026 Penta Minds</span>
+  <span>© 2026 Penta Minds. All Rights Reserved.</span>
   <span style="display:inline-flex;align-items:center;flex-wrap:wrap;gap:2px;font-size:12px;opacity:0.85;">
     This site is licensed under
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
@@ -2274,7 +2275,6 @@ if (MAINTENANCE_MODE) {
     const links = document.querySelectorAll(".nav-link");
     const sections = document.querySelectorAll("main section[id]");
     const revealItems = document.querySelectorAll(".reveal");
-    const teamCards = document.querySelectorAll(".team-card[data-member-id]");
     const liveCounterNumber = document.querySelector(".live-counter-number");
     const heroCanvas = document.querySelector(".hero-network-canvas");
     const heroContext = heroCanvas.getContext("2d");
@@ -2330,113 +2330,6 @@ if (MAINTENANCE_MODE) {
 
     sections.forEach((section) => activeObserver.observe(section));
 
-    const setAvatarPhoto = (card, imageData) => {
-      const avatar = card.querySelector(".avatar");
-      const resetButton = card.querySelector(".avatar-reset");
-      let image = avatar.querySelector("img");
-
-      if (!image) {
-        image = document.createElement("img");
-        image.alt = `${card.querySelector("h3").textContent} photo`;
-        avatar.prepend(image);
-      }
-
-      image.src = imageData;
-      resetButton.disabled = false;
-    };
-
-    const clearAvatarPhoto = (card) => {
-      const image = card.querySelector(".avatar img");
-      const resetButton = card.querySelector(".avatar-reset");
-
-      if (image) image.remove();
-      resetButton.disabled = true;
-    };
-
-    const storeAvatarPhoto = (memberId, imageData) => {
-      try {
-        localStorage.setItem(avatarStorageKey(memberId), imageData);
-      } catch (error) {
-        console.warn("Could not save team photo to localStorage.", error);
-      }
-    };
-
-    const removeStoredAvatarPhoto = (memberId) => {
-      try {
-        localStorage.removeItem(avatarStorageKey(memberId));
-      } catch (error) {
-        console.warn("Could not remove team photo from localStorage.", error);
-      }
-    };
-
-    const loadStoredAvatarPhoto = (memberId) => {
-      try {
-        return localStorage.getItem(avatarStorageKey(memberId));
-      } catch (error) {
-        console.warn("Could not load team photo from localStorage.", error);
-        return null;
-      }
-    };
-
-    const resizePhoto = (file, callback) => {
-      const reader = new FileReader();
-
-      reader.addEventListener("load", () => {
-        const image = new Image();
-
-        image.addEventListener("load", () => {
-          const size = 320;
-          const canvas = document.createElement("canvas");
-          const context = canvas.getContext("2d");
-          const shortestSide = Math.min(image.width, image.height);
-          const sourceX = (image.width - shortestSide) / 2;
-          const sourceY = (image.height - shortestSide) / 2;
-
-          canvas.width = size;
-          canvas.height = size;
-          context.drawImage(image, sourceX, sourceY, shortestSide, shortestSide, 0, 0, size, size);
-          callback(canvas.toDataURL("image/jpeg", 0.82));
-        });
-
-        image.src = reader.result;
-      });
-
-      reader.readAsDataURL(file);
-    };
-
-    teamCards.forEach((card) => {
-      const memberId = card.dataset.memberId;
-      const uploadButton = card.querySelector(".avatar-upload");
-      const input = card.querySelector(".avatar-input");
-      const resetButton = card.querySelector(".avatar-reset");
-      const storedPhoto = loadStoredAvatarPhoto(memberId);
-
-      if (storedPhoto) setAvatarPhoto(card, storedPhoto);
-
-      uploadButton.addEventListener("click", () => {
-        input.click();
-      });
-
-      input.addEventListener("change", () => {
-        const [file] = input.files;
-
-        if (!file || !file.type.startsWith("image/")) return;
-
-        resizePhoto(file, (imageData) => {
-          setAvatarPhoto(card, imageData);
-          storeAvatarPhoto(memberId, imageData);
-          input.value = "";
-        });
-      });
-
-      resetButton.addEventListener("click", () => {
-        clearAvatarPhoto(card);
-        removeStoredAvatarPhoto(memberId);
-        input.value = "";
-      });
-    });
-
-    
     const getDotCount = () => {
       const area = canvasWidth * canvasHeight;
       const densityCount = Math.round(area / 18000);
@@ -2528,6 +2421,7 @@ if (MAINTENANCE_MODE) {
         document.body.classList.remove("is-loading");
       }, 1500);
     });
+
 
     /* ================================================================
      * PENTA MINDS - Production Image Management System
@@ -2867,7 +2761,7 @@ if (MAINTENANCE_MODE) {
 
       loadTeamMembers();
     });
-    
+
   </script>
 
 </div>
