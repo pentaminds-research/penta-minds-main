@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ── Primary SEO ────────────────────────────────────── -->
+  <meta name="description" content="Official Penta Minds brand identity and logo usage notice. Ownership statement, permitted use, prohibited use, contact, and copyright information for the Penta Minds AI research ecosystem.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Penta Minds">
+  <meta name="language" content="en-IN">
+  <link rel="canonical" href="https://pentaminds.in/brand-identity/">
+
+  <!-- ── Open Graph ─────────────────────────────────────── -->
+  <meta property="og:title" content="Penta Minds — Brand Identity & Logo Usage Notice">
+  <meta property="og:description" content="Official ownership and logo usage notice for the Penta Minds AI research ecosystem.">
+  <meta property="og:image" content="https://pentaminds.in/assets/logos/pentaminds-logo.png">
+  <meta property="og:url" content="https://pentaminds.in/brand-identity/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:site_name" content="Penta Minds">
+
+  <!-- ── Twitter Card ───────────────────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Penta Minds — Brand Identity & Logo Usage Notice">
+  <meta name="twitter:description" content="Official ownership and logo usage notice for the Penta Minds AI research ecosystem.">
+  <meta name="twitter:image" content="https://pentaminds.in/assets/logos/pentaminds-logo.png">
+
+  <!-- ── Structured Data: Organization Schema ───────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Penta Minds",
+    "alternateName": "Team Penta Minds",
+    "url": "https://pentaminds.in",
+    "logo": "https://pentaminds.in/assets/logos/pentaminds-logo.png",
+    "email": "hello@pentaminds.in",
+    "description": "Student-led AI research organization studying AI in Indian higher education.",
+    "foundingDate": "2026",
+    "sameAs": [
+      "https://www.linkedin.com/company/pentaminds-research",
+      "https://research.pentaminds.in",
+      "https://team.pentaminds.in",
+      "https://toolkit.pentaminds.in"
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    }
+  }
+  </script>
+
+  <!-- ── Structured Data: WebPage ───────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Penta Minds — Brand Identity & Logo Usage Notice",
+    "url": "https://pentaminds.in/brand-identity/",
+    "description": "Official brand identity and logo usage notice for the Penta Minds ecosystem.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Penta Minds",
+      "url": "https://pentaminds.in"
+    }
+  }
+  </script>
+
+  <!-- ── Fonts ──────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ── Favicon ────────────────────────────────────────── -->
+  <link rel="icon" type="image/png" href="/assets/logos/pentaminds-logo.png">
+  <link rel="apple-touch-icon" href="/assets/logos/pentaminds-logo.png">
+
+  <title>Penta Minds — Brand Identity & Logo Usage Notice</title>
+
+  <style>
+    /* ── Design Tokens ──────────────────────────────── */
+    :root {
+      --navy:       #0D2145;
+      --navy-deep:  #0A1A35;
+      --navy-brand: #1B2A4A;
+      --orange:     #E87722;
+      --orange-dim: rgba(232, 119, 34, 0.12);
+      --light:      #F8F9FC;
+      --white:      #FFFFFF;
+      --text:       #3A4455;
+      --muted:      #5F6B7A;
+      --line:       rgba(13, 33, 69, 0.12);
+      --shadow-sm:  0 4px 16px rgba(13, 33, 69, 0.08);
+      --shadow-md:  0 18px 50px rgba(13, 33, 69, 0.12);
+      --shadow-lg:  0 28px 70px rgba(13, 33, 69, 0.14);
+      --radius:     8px;
+      --radius-lg:  12px;
+      --font-head:  "Poppins", "Manrope", "Inter", sans-serif;
+      --font-body:  "Inter", "Manrope", sans-serif;
+    }
+
+    /* ── Reset ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { border: 0; cursor: pointer; font: inherit; }
+    ul { list-style: none; }
+
+    /* ── Base ───────────────────────────────────────── */
+    body {
+      background: var(--light);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* ── Header ─────────────────────────────────────── */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      transition: background 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+    }
+
+    .site-header.scrolled {
+      background: var(--navy);
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 12px 34px rgba(10, 26, 53, 0.28);
+    }
+
+    .site-header.scrolled .brand-penta,
+    .site-header.scrolled .nav-link { color: var(--white); }
+    .site-header.scrolled .brand-sub { color: rgba(255, 255, 255, 0.6); }
+    .site-header.scrolled .nav-link:hover,
+    .site-header.scrolled .nav-link.active {
+      background: rgba(232, 119, 34, 0.16);
+      color: var(--orange);
+    }
+    .site-header.scrolled .menu-toggle { background: var(--orange); }
+
+    .nav-wrap {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      min-height: 78px;
+      gap: 24px;
+    }
+
+    .brand {
+      align-items: flex-start;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.05;
+      min-width: max-content;
+    }
+
+    .brand-main { font-size: 1.32rem; font-weight: 800; }
+    .brand-penta { color: var(--navy); }
+    .brand-minds { color: var(--orange); }
+    .brand-sub {
+      color: #777f8d;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-links {
+      align-items: center;
+      display: flex;
+      gap: 4px;
+    }
+
+    .nav-link {
+      border-radius: 999px;
+      color: var(--navy);
+      display: inline-flex;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 8px 12px;
+      transition: background 200ms ease, color 200ms ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background: var(--orange-dim);
+      color: var(--orange);
+    }
+
+    .menu-toggle {
+      align-items: center;
+      background: var(--navy);
+      border-radius: 8px;
+      display: none;
+      height: 44px;
+      justify-content: center;
+      width: 44px;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      background: var(--white);
+      border-radius: 99px;
+      display: block;
+      height: 2px;
+      width: 22px;
+    }
+
+    .menu-toggle span { position: relative; }
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      content: "";
+      left: 0;
+      position: absolute;
+      transition: transform 200ms ease, top 200ms ease;
+    }
+    .menu-toggle span::before { top: -7px; }
+    .menu-toggle span::after  { top: 7px; }
+
+    .menu-toggle.open span { background: transparent; }
+    .menu-toggle.open span::before { top: 0; transform: rotate(45deg); }
+    .menu-toggle.open span::after  { top: 0; transform: rotate(-45deg); }
+
+    /* ── Page hero ──────────────────────────────────── */
+    .brand-legal-shell {
+      padding: 130px 0 88px;
+    }
+
+    /* ── Notice card ────────────────────────────────── */
+    .brand-notice {
+      background: var(--white);
+      border: 1px solid rgba(27, 42, 74, 0.12);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: clamp(32px, 6vw, 64px);
+    }
+
+    /* ── Eyebrow label ──────────────────────────────── */
+    .eyebrow {
+      color: var(--orange);
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    /* ── Page title ─────────────────────────────────── */
+    .brand-notice h1 {
+      color: var(--navy-brand);
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.08;
+      max-width: 860px;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── Authority bar ──────────────────────────────── */
+    .authority-bar {
+      align-items: center;
+      background: var(--light);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--orange);
+      border-radius: var(--radius);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+      margin-top: 28px;
+      padding: 16px 22px;
+    }
+
+    .authority-bar p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .authority-bar .authority-badge {
+      align-items: center;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--navy);
+      display: inline-flex;
+      font-size: 0.78rem;
+      font-weight: 800;
+      gap: 7px;
+      padding: 6px 14px;
+      white-space: nowrap;
+    }
+
+    .authority-badge-dot {
+      background: var(--orange);
+      border-radius: 50%;
+      flex-shrink: 0;
+      height: 8px;
+      width: 8px;
+    }
+
+    /* ── Notice blocks ──────────────────────────────── */
+    .notice-block {
+      border-top: 3px solid var(--orange);
+      margin-top: 36px;
+      padding-top: 26px;
+    }
+
+    .notice-block h2 {
+      color: var(--navy-brand);
+      font-family: var(--font-head);
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+    }
+
+    .notice-block p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .notice-block p + p { margin-top: 12px; }
+
+    .notice-block a {
+      color: var(--orange);
+      font-weight: 800;
+    }
+
+    .notice-block a:hover { text-decoration: underline; }
+
+    /* ── Two-column grid ────────────────────────────── */
+    .notice-grid {
+      display: grid;
+      gap: 28px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 36px;
+    }
+
+    .notice-grid .notice-block {
+      background: var(--light);
+      border-radius: var(--radius);
+      border-top: 3px solid var(--orange);
+      margin-top: 0;
+      padding: 24px 26px;
+    }
+
+    /* ── List styling inside notice blocks ──────────── */
+    .notice-block ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .notice-block ul li {
+      align-items: flex-start;
+      color: var(--muted);
+      display: flex;
+      font-size: 0.96rem;
+      gap: 10px;
+      line-height: 1.75;
+      padding: 8px 0;
+    }
+
+    .notice-block ul li + li {
+      border-top: 1px solid var(--line);
+    }
+
+    .notice-block ul li::before {
+      background: var(--orange);
+      border-radius: 50%;
+      content: "";
+      flex-shrink: 0;
+      height: 7px;
+      margin-top: 9px;
+      width: 7px;
+    }
+
+    /* ── Prohibited list — subtle red tint ──────────── */
+    .prohibited-block ul li::before {
+      background: #c2410c;
+    }
+
+    /* ── Contact block ──────────────────────────────── */
+    .contact-link-wrap {
+      align-items: center;
+      background: var(--navy);
+      border-radius: var(--radius);
+      display: inline-flex;
+      gap: 12px;
+      margin-top: 14px;
+      padding: 14px 22px;
+    }
+
+    .contact-link-wrap a {
+      color: var(--orange);
+      font-size: 1.06rem;
+      font-weight: 800;
+    }
+
+    .contact-link-wrap a:hover { text-decoration: underline; }
+
+    /* ── Copyright block ────────────────────────────── */
+    .copyright-block {
+      align-items: flex-start;
+      background: var(--navy);
+      border-radius: var(--radius);
+      color: rgba(255, 255, 255, 0.82);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      margin-top: 36px;
+      padding: 22px 28px;
+    }
+
+    .copyright-block p {
+      color: rgba(255, 255, 255, 0.82) !important;
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin: 0 !important;
+    }
+
+    .copyright-block strong { color: var(--white); }
+
+    /* ── Footer ─────────────────────────────────────── */
+    .site-footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.9rem;
+      margin-top: 0;
+      padding: 52px 0 0;
+    }
+
+    .footer-grid {
+      align-items: start;
+      display: grid;
+      gap: 40px;
+      grid-template-columns: 1fr auto auto;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: color 180ms ease;
+    }
+
+    .footer-links a:hover { color: var(--orange); }
+
+    .footer-links a[aria-current="page"] { color: var(--orange); font-weight: 800; }
+
+    .footer-legal {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: right;
+    }
+
+    .footer-legal span {
+      color: rgba(255, 255, 255, 0.58);
+      display: block;
+      font-size: 0.82rem;
+    }
+
+    .footer-legal a {
+      color: var(--orange);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .footer-legal a:hover { text-decoration: underline; }
+
+    .footer-line {
+      background: var(--orange);
+      height: 3px;
+      margin-top: 40px;
+      width: 100%;
+    }
+
+    /* ── Responsive ─────────────────────────────────── */
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-legal { grid-column: 1 / -1; text-align: left; }
+    }
+
+    @media (max-width: 760px) {
+      .notice-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-legal { text-align: left; }
+      .menu-toggle { display: flex; }
+      .nav-links {
+        background: var(--white);
+        border-top: 1px solid var(--line);
+        box-shadow: var(--shadow-md);
+        display: none;
+        flex-direction: column;
+        inset: 78px 0 auto;
+        padding: 16px 20px 24px;
+        position: fixed;
+      }
+      .nav-links.open { display: flex; }
+      .site-header.scrolled .nav-links {
+        background: var(--navy);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════
+       HEADER / NAV
+  ════════════════════════════════════════════════════ -->
+  <header class="site-header" id="siteHeader">
+    <nav class="container nav-wrap" aria-label="Primary navigation">
+      <a class="brand" href="/" aria-label="Penta Minds home">
+        <span class="brand-main">
+          <span class="brand-penta">Penta</span>&nbsp;<span class="brand-minds">Minds</span>
+        </span>
+        <span class="brand-sub">Brand Identity</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav">
+        <span aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav-links" id="siteNav" role="list">
+        <li><a class="nav-link" href="/">Main Site</a></li>
+        <li><a class="nav-link" href="https://research.pentaminds.in">Research</a></li>
+        <li><a class="nav-link" href="https://team.pentaminds.in">Team</a></li>
+        <li><a class="nav-link" href="https://toolkit.pentaminds.in">Toolkit</a></li>
+        <li><a class="nav-link active" href="/brand-identity/" aria-current="page">Brand Identity</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════════════════════ -->
+  <main class="brand-legal-shell">
+    <div class="container">
+      <section class="brand-notice" aria-labelledby="brand-notice-title">
+
+        <!-- Eyebrow -->
+        <p class="eyebrow">Official Notice · Penta Minds Ecosystem</p>
+
+        <!-- Page Title -->
+        <h1 id="brand-notice-title">Penta Minds — Brand Identity &amp; Logo Usage Notice</h1>
+
+        <!-- Authority bar -->
+        <div class="authority-bar" role="note" aria-label="Authoritative notice">
+          <p>This is the single authoritative brand identity and ownership reference for the entire Penta Minds ecosystem. All portals link to this page.</p>
+          <span class="authority-badge">
+            <span class="authority-badge-dot" aria-hidden="true"></span>
+            Authoritative Reference — pentaminds.in/brand-identity/
+          </span>
+        </div>
+
+        <!-- ── 1. Ownership Statement ─────────────────── -->
+        <div class="notice-block">
+          <h2>Ownership Statement</h2>
+          <p>Penta Minds — including its name, logo, visual identity, brand marks, research ecosystem identity, portal names, and all associated public-facing presentation — is the institutional identity of the Penta Minds student-led AI research organization, founded in 2026.</p>
+          <p>The Penta Minds logo and brand identity may not be used in any way that suggests authorization, endorsement, partnership, affiliation, representation, or official status without prior written permission from Penta Minds.</p>
+          <p>The Penta Minds name and visual identity are protected as the official institutional marks of the Penta Minds ecosystem, encompassing all portals operating under the <strong>pentaminds.in</strong> domain and subdomains.</p>
+        </div>
+
+        <!-- ── 2. Permitted / Prohibited Grid ─────────── -->
+        <div class="notice-grid">
+          <article class="notice-block">
+            <h2>Permitted Use</h2>
+            <ul>
+              <li>Referencing Penta Minds in academic, journalistic, educational, or collaborative contexts with proper attribution.</li>
+              <li>Linking to official Penta Minds portals and public research pages.</li>
+              <li>Using the Penta Minds name in factual descriptions, citations, and press coverage.</li>
+              <li>Displaying the logo only when written permission has been granted, or when supplied through an official collaboration channel.</li>
+              <li>Quoting Penta Minds research outputs with source attribution under CC BY-NC-SA 4.0 terms (where applicable).</li>
+            </ul>
+          </article>
+
+          <article class="notice-block prohibited-block">
+            <h2>Prohibited Use</h2>
+            <ul>
+              <li>Modifying, redrawing, distorting, recoloring, or recreating the Penta Minds logo in any form.</li>
+              <li>Using the logo or name for commercial, political, misleading, or unrelated promotional activity.</li>
+              <li>Implying official partnership, certification, sponsorship, or endorsement without written approval.</li>
+              <li>Placing the brand identity on materials that conflict with Penta Minds' research, educational, or institutional purpose.</li>
+              <li>Reproducing the Penta Minds visual identity in contexts designed to misrepresent institutional affiliation.</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- ── 3. Ecosystem Coverage ──────────────────── -->
+        <div class="notice-block">
+          <h2>Ecosystem Coverage</h2>
+          <p>This notice governs the brand identity across all official Penta Minds portals, including but not limited to:</p>
+          <ul style="margin-top: 12px;">
+            <li><a href="https://pentaminds.in" target="_blank" rel="noopener">pentaminds.in</a> — Main institutional site</li>
+            <li><a href="https://research.pentaminds.in" target="_blank" rel="noopener">research.pentaminds.in</a> — Research Division</li>
+            <li><a href="https://team.pentaminds.in" target="_blank" rel="noopener">team.pentaminds.in</a> — Team Division</li>
+            <li><a href="https://toolkit.pentaminds.in" target="_blank" rel="noopener">toolkit.pentaminds.in</a> — Toolkit Division</li>
+            <li><a href="https://vignesh.pentaminds.in" target="_blank" rel="noopener">vignesh.pentaminds.in</a> — Founder Portal</li>
+          </ul>
+        </div>
+
+        <!-- ── 4. Contact ──────────────────────────────── -->
+        <div class="notice-block">
+          <h2>Contact &amp; Permissions</h2>
+          <p>For logo usage requests, brand permissions, collaboration references, media use, or institutional documentation inquiries, contact the Penta Minds team directly:</p>
+          <div class="contact-link-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E87722" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <a href="mailto:hello@pentaminds.in">hello@pentaminds.in</a>
+          </div>
+        </div>
+
+        <!-- ── 5. Copyright ────────────────────────────── -->
+        <div class="copyright-block" role="note" aria-label="Copyright notice">
+          <p><strong>© Penta Minds. All Rights Reserved.</strong><br>
+          The Penta Minds brand identity, name, and logo are protected as the official marks of the Penta Minds ecosystem. Unauthorized reproduction or use is prohibited.</p>
+          <p style="font-size:0.8rem; opacity:0.7;">Canonical URL: <a href="https://pentaminds.in/brand-identity/" style="color:var(--orange)">pentaminds.in/brand-identity/</a></p>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <a class="brand" href="/" aria-label="Penta Minds home">
+        <span class="brand-main">
+          <span class="brand-penta" style="color:#fff;">Penta</span>&nbsp;<span class="brand-minds">Minds</span>
+        </span>
+        <span class="brand-sub" style="color:rgba(255,255,255,0.55);">Student Research Team</span>
+      </a>
+
+      <ul class="footer-links" role="list">
+        <li><a href="/">Main Site</a></li>
+        <li><a href="https://research.pentaminds.in">Research ↗</a></li>
+        <li><a href="https://team.pentaminds.in">Team ↗</a></li>
+        <li><a href="https://toolkit.pentaminds.in">Toolkit ↗</a></li>
+        <li><a href="https://vignesh.pentaminds.in">Founder ↗</a></li>
+        <li><a href="/brand-identity/" aria-current="page">Brand Identity &amp; Logo Usage</a></li>
+        <li><a href="mailto:hello@pentaminds.in">Contact</a></li>
+      </ul>
+
+      <div class="footer-legal">
+        <span>© Penta Minds. All Rights Reserved.</span>
+        <a href="/brand-identity/" aria-current="page">Brand Identity &amp; Logo Usage</a>
+      </div>
+
+    </div>
+    <div class="footer-line" aria-hidden="true"></div>
+  </footer>
+
+
+  <!-- ── Header scroll behaviour ─────────────────────── -->
+  <script>
+    const header = document.getElementById("siteHeader");
+    const toggle = document.getElementById("menuToggle");
+    const nav    = document.getElementById("siteNav");
+
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 50);
+    }, { passive: true });
+
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      toggle.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+    });
+  </script>
+
+</body>
+</html>
