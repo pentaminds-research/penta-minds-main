@@ -2675,17 +2675,7 @@ if (MAINTENANCE_MODE) {
           body: JSON.stringify({ password })
         });
         const result = await res.json();
-        if (!res.ok || !result.success) return onError(result.error || "Invalid password.");
-        ADMIN_TOKEN = result.token;
-        document.body.classList.add("admin-mode");
-        enableAdminControls();
-        onSuccess();
-      } catch (err) {
-        console.error("[AdminLogin]", err);
-        onError("Network error. Check your connection.");
-      }
-
-      const result = await res.json();
+        const result = await res.json();
 
 console.log("LOGIN RESULT:", result);
 
@@ -2695,6 +2685,15 @@ if (!res.ok || !result.success)
 ADMIN_TOKEN = result.token;
 
 console.log("ADMIN_TOKEN:", ADMIN_TOKEN);
+        if (!res.ok || !result.success) return onError(result.error || "Invalid password.");
+        ADMIN_TOKEN = result.token;
+        document.body.classList.add("admin-mode");
+        enableAdminControls();
+        onSuccess();
+      } catch (err) {
+        console.error("[AdminLogin]", err);
+        onError("Network error. Check your connection.");
+      }
     };
 
     
