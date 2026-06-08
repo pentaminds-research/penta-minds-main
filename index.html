@@ -2521,7 +2521,9 @@ if (MAINTENANCE_MODE) {
         avatarSpan.prepend(img);
       }
       img.alt = `${card.querySelector("h3")?.textContent || memberSlug} photo`;
-      img.src = `${imageUrl}?v=${Date.now()}`;
+if (member.image_url) {
+  img.src = `${member.image_url}?v=${Date.now()}`;
+}
     };
 
     const restoreInitials = (card) => {
@@ -2583,13 +2585,37 @@ if (MAINTENANCE_MODE) {
 );
           
           const result = await response.json();
-          if (!response.ok || !result.success) {
-            throw new Error(result.error || `Upload failed (${response.status})`);
-          }
 
-          setCardImage(card, memberSlug, result.image_url);
-          resetBtn.disabled = false;
-          showUploadStatus(card, "success", "Photo updated - visible on all devices.");
+if (!response.ok || !result.success) {
+  throw new Error(
+    result?.error?.message ||
+    result?.error ||
+    `Upload failed (${response.status})`
+  );
+}
+
+const imageUrl = result?.data?.image_url;
+
+if (!imageUrl) {
+  throw new Error(
+    "Image URL missing from upload response."
+  );
+}
+
+setCardImage(
+  card,
+  memberSlug,
+  imageUrl
+);
+
+resetBtn.disabled = false;
+
+showUploadStatus(
+  card,
+  "success",
+  "Photo updated - visible on all devices."
+);
+          
         } catch (err) {
           console.error("[Upload]", err);
           showUploadStatus(card, "error", err.message || "Upload failed.");
