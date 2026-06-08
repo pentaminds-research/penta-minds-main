@@ -2538,6 +2538,7 @@ if (MAINTENANCE_MODE) {
     };
 
     const wireCardHandlers = (card, memberSlug) => {
+      console.log("WIRING:", memberSlug);
       if (card.dataset.wired === "true") return;
       card.dataset.wired = "true";
 
@@ -2684,9 +2685,6 @@ ADMIN_TOKEN = result?.data?.token;
 if (!ADMIN_TOKEN) {
   return onError("Authentication token missing.");
 }
-console.log("ADMIN_TOKEN:", ADMIN_TOKEN);
-        if (!res.ok || !result.success) return onError(result.error || "Invalid password.");
-        ADMIN_TOKEN = result.token;
         document.body.classList.add("admin-mode");
         enableAdminControls();
         onSuccess();
