@@ -1784,6 +1784,16 @@ body.admin-mode .avatar-reset {
   </style>
 </head>
 <body class="is-loading">
+  <div class="page-loader">
+  <div class="loader-logo">
+    <span style="color:#0D2145;">Penta</span>
+    <span style="color:#E87722;">Minds</span>
+  </div>
+
+  <div class="loader-progress">
+    <span></span>
+  </div>
+</div>
  <header class="site-header">
     <nav class="container nav-wrap" aria-label="Primary navigation">
       <a class="brand" href="#home" aria-label="Penta Minds home">
@@ -2276,10 +2286,19 @@ function redirectTo(url, label) {
       window.cancelAnimationFrame(animationFrameId);
     });
 
-    window.addEventListener("load", () => {
-  document.body.classList.remove("is-loading");
-});
+    const pageLoader = document.querySelector(".page-loader");
 
+window.addEventListener("load", () => {
+  window.setTimeout(() => {
+
+    if (pageLoader) {
+      pageLoader.classList.add("done");
+    }
+
+    document.body.classList.remove("is-loading");
+
+  }, 1500);
+});
 
     /* ================================================================
      * PENTA MINDS - Production Image Management System
@@ -2541,8 +2560,13 @@ showUploadStatus(
 
         const members = Array.isArray(payload.data) ? payload.data : [];
         grid.innerHTML = "";
-        members.filter((m) => !m.is_associate).forEach((m) => grid.appendChild(buildTeamCard(m)));
-
+members
+  .filter((m) =>
+      !m.is_associate &&
+      m.member_slug !== "vignesh-prakash" &&
+      m.member_slug !== "vishnupriyan-p"
+  )
+  .forEach((m) => grid.appendChild(buildTeamCard(m)));
         if (associates) {
           associates.innerHTML = "";
           members.filter((m) => m.is_associate).forEach((m) => associates.appendChild(buildTeamCard(m)));
