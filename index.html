@@ -2277,11 +2277,8 @@ function redirectTo(url, label) {
     });
 
     window.addEventListener("load", () => {
-      window.setTimeout(() => {
-        pageLoader.classList.add("done");
-        document.body.classList.remove("is-loading");
-      }, 1500);
-    });
+  document.body.classList.remove("is-loading");
+});
 
 
     /* ================================================================
