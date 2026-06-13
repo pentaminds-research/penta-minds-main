@@ -24,8 +24,7 @@
   <title>Penta Minds | AI as the Hidden Curriculum: How Learning is happening through AI Without being Taught?</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dn7sbid1f/image/upload/q_auto/f_auto/v1781362901/favicon-main_ncd6be.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dn7sbid1f/image/upload/q_auto/f_auto/v1781362901/favicon-main_ncd6be.png">
   <link rel="apple-touch-icon" href="https://res.cloudinary.com/dn7sbid1f/image/upload/q_auto/f_auto/v1781362901/favicon-main_ncd6be.png">
   <script type="application/ld+json">
     {
@@ -355,41 +354,156 @@
       z-index: -1;
     }
 
-    .hero-content {
-      max-width: 900px;
+    /* ── Hero Split Layout ──────────────────────── */
+    .hero-layout {
+      align-items: center;
+      display: grid;
+      gap: clamp(32px, 5vw, 68px);
+      grid-template-columns: minmax(300px, 42%) minmax(0, 58%);
       position: relative;
       z-index: 2;
     }
 
-    .hero-logo {
+    /* ── Hero Logo/Image Panel (left) ───────────── */
+    .hero-logo-panel {
+      position: relative;
+    }
+
+    .hero-logo-frame {
+      aspect-ratio: 1 / 1;
+      background: linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 18px;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      transition: box-shadow 320ms ease, transform 320ms ease;
+    }
+
+    .hero-logo-frame:hover {
+      box-shadow: 0 40px 90px rgba(0, 0, 0, 0.36);
+      transform: translateY(-4px);
+    }
+
+    .hero-logo-frame img {
       display: block;
-      margin: 0 auto 24px auto;
-      max-width: 180px;
+      width: 72%;
+      height: auto;
+      object-fit: contain;
+      transition: transform 420ms ease;
+    }
+
+    .hero-logo-frame:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Orange accent bar at bottom of frame */
+    .hero-logo-frame::after {
+      background: var(--orange);
+      bottom: 0;
+      content: "";
+      height: 4px;
+      left: 0;
+      position: absolute;
       width: 100%;
     }
 
-    .hero h1,
-    .hero h2 {
-      font-family: var(--heading);
-      font-size: clamp(3.2rem, 8vw, 7.6rem);
+    /* Floating badge below the frame */
+    .hero-logo-badge {
+      align-items: center;
+      background: var(--navy);
+      border: 1px solid rgba(232, 119, 34, 0.42);
+      border-radius: 999px;
+      bottom: -20px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.32);
+      color: var(--white);
+      display: inline-flex;
+      font-size: 0.76rem;
       font-weight: 800;
-      letter-spacing: 0;
-      line-height: 0.95;
+      gap: 8px;
+      left: 50%;
+      letter-spacing: 0.06em;
+      padding: 8px 18px;
+      position: absolute;
+      text-transform: uppercase;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      z-index: 3;
+    }
+
+    .hero-logo-badge-dot {
+      background: var(--orange);
+      border-radius: 50%;
+      flex-shrink: 0;
+      height: 8px;
+      width: 8px;
+    }
+
+    /* ── Hero Copy Panel (right) ────────────────── */
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow-badge {
+      border: 1px solid rgba(232, 119, 34, 0.72);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.92);
+      display: inline-flex;
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      margin-bottom: 22px;
+      padding: 7px 14px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-family: "Poppins", "Inter", sans-serif;
+      font-size: clamp(2.4rem, 5vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.04;
     }
 
     .hero h2 {
       color: var(--orange);
-      margin-top: 10px;
+      font-family: "Poppins", "Inter", sans-serif;
+      font-size: clamp(1.1rem, 2.4vw, 1.7rem);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      line-height: 1.35;
+      margin-top: 16px;
+    }
+
+    .hero-kicker {
+      color: rgba(255, 255, 255, 0.78);
+      display: block;
+      font-size: clamp(0.92rem, 1.6vw, 1.12rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-top: 14px;
     }
 
     .hero p {
-      color: rgba(255, 255, 255, 0.86);
-      font-size: clamp(1.05rem, 2vw, 1.28rem);
-      font-weight: 600;
-      margin-top: 28px;
-      max-width: 680px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: clamp(0.98rem, 1.7vw, 1.15rem);
+      font-weight: 500;
+      line-height: 1.78;
+      margin-top: 18px;
+      max-width: 600px;
     }
 
+    .hero-logo {
+      display: none; /* legacy — no longer used */
+    }
+    
     .button-row {
       display: flex;
       flex-wrap: wrap;
@@ -1294,8 +1408,38 @@
       }
     }
 
-    @media (max-width: 768px) {
-      .hero-logo { max-width: 120px; }
+    @media (max-width: 920px) {
+      .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .hero-logo-panel {
+        display: flex;
+        justify-content: center;
+      }
+      .hero-logo-frame {
+        max-width: 380px;
+      }
+      .hero-copy {
+        text-align: center;
+      }
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .button-row {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .hero-logo-frame {
+        max-width: 280px;
+        border-radius: 12px;
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+      }
     }
   
 /* ── Project Card ─────────────────────────── */
@@ -1688,11 +1832,41 @@
   <main>
     <section class="hero" id="home">
       <canvas class="hero-network-canvas" aria-hidden="true"></canvas>
-      <div class="container hero-content reveal">
-        <img src="https://res.cloudinary.com/dn7sbid1f/image/upload/v1780415537/Penta_Minds_Research_Team_Logo_z3ylyk.png" alt="Penta Minds Student Research Team Logo" class="hero-logo">
-        <h1>AI as the Hidden Curriculum:</h1>
-        <h2>How Learning is happening through AI Without being Taught?</h2>
-        <p>A Student Research Initiative</p>
+
+      <div class="container hero-layout reveal">
+
+        <!-- ── Left Panel: Logo / Visual Identity ── -->
+        <div class="hero-logo-panel">
+          <div class="hero-logo-frame" role="img" aria-label="Penta Minds — Student Research Team">
+            <img
+              src="https://res.cloudinary.com/dn7sbid1f/image/upload/q_auto/f_auto/v1780415537/Penta_Minds_Research_Team_Logo_z3ylyk.png"
+              alt="Penta Minds Student Research Team Logo"
+              width="480"
+              height="480"
+              decoding="async"
+              fetchpriority="high"
+            >
+          </div>
+          <div class="hero-logo-badge" aria-hidden="true">
+            <span class="hero-logo-badge-dot"></span>
+            Student Research Team · 2026
+          </div>
+        </div>
+
+        <!-- ── Right Panel: Text Content ── -->
+        <div class="hero-copy">
+          <span class="eyebrow-badge">PENTA MINDS · AI RESEARCH INITIATIVE</span>
+          <h1>AI as the<br>Hidden Curriculum:</h1>
+          <h2>How Learning is happening through AI Without being Taught?</h2>
+          <span class="hero-kicker">AI Literacy · Educational AI · Higher Education Research</span>
+          <p>A student-led research initiative studying how AI is encountered, used, and learned informally across Tier 1, Tier 2, and Tier 3 higher education institutions in India — without curriculum, without acknowledgment.</p>
+          <div class="button-row">
+            <a class="btn btn-orange" href="#about">About the Project</a>
+            <a class="btn btn-white-outline" href="#research">Explore Research</a>
+            <a class="btn btn-white-outline" href="#contact">Contact</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
