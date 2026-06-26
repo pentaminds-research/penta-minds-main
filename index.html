@@ -562,6 +562,74 @@
       width: 100%;
     }
 
+    /* ── StartupTN Registration Banner ──────────────── */
+    .startuptn-banner {
+      background: var(--light);
+      border-bottom: 1px solid rgba(13, 33, 69, 0.08);
+      padding: 14px 0;
+    }
+
+    .startuptn-banner-inner {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .startuptn-pill {
+      align-items: center;
+      background: var(--white);
+      border: 1px solid rgba(232, 119, 34, 0.32);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      gap: 10px;
+      padding: 8px 16px 8px 10px;
+    }
+
+    .startuptn-pill-dot {
+      background: var(--orange);
+      border-radius: 50%;
+      flex-shrink: 0;
+      height: 8px;
+      width: 8px;
+    }
+
+    .startuptn-pill-text {
+      color: var(--navy);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .startuptn-pill-text strong {
+      color: var(--orange);
+      font-weight: 900;
+    }
+
+    .startuptn-pill-meta {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-left: 4px;
+    }
+
+    @media (max-width: 680px) {
+      .startuptn-banner-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .startuptn-pill {
+        flex-direction: column;
+        gap: 4px;
+        padding: 12px 18px;
+        text-align: center;
+      }
+      .startuptn-pill-meta {
+        margin-left: 0;
+      }
+    }
+
     .stats-bar {
       background: var(--navy);
       color: var(--white);
@@ -1871,6 +1939,19 @@
     </section>
 
     <div class="orange-divider" aria-hidden="true"></div>
+
+    <div class="startuptn-banner" role="note" aria-label="StartupTN registration announcement">
+      <div class="container startuptn-banner-inner">
+        <span class="startuptn-pill">
+          <span class="startuptn-pill-dot" aria-hidden="true"></span>
+          <span class="startuptn-pill-text">
+            Registered <strong>StartupTN</strong> Member
+          </span>
+          <span class="startuptn-pill-meta">ACE Engagement Level · Member since 24 Jun 2026</span>
+        </span>
+      </div>
+    </div>
+
     <section class="stats-bar" aria-label="Project statistics">
       <div class="container stats-grid">
         <div class="stat reveal">
@@ -1898,6 +1979,33 @@
       </div>
     </section>
 
+    <section class="section" id="startuptn-recognition" style="background:var(--light)">
+      <div class="container">
+        <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto;">
+          <span class="orange-rule" style="margin:0 auto 18px;"></span>
+          <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.4rem);">Recognised by StartupTN</h2>
+          <p class="subtitle" style="margin-top:14px;">
+            Penta Minds is a registered member of StartupTN, the Government of Tamil Nadu's
+            official startup ecosystem initiative.
+          </p>
+        </div>
+        <div class="objectives-grid reveal" style="margin-top:36px;max-width:760px;margin-left:auto;margin-right:auto;">
+          <article class="objective-card">
+            <h3>ACE</h3>
+            <p>Engagement Level</p>
+          </article>
+          <article class="objective-card">
+            <h3>Member</h3>
+            <p>Since 24 Jun 2026</p>
+          </article>
+          <article class="objective-card">
+            <h3>AI, ML & IoT</h3>
+            <p>Focused Sector · EdTech · Data Mining & Analytics</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    
     <section class="section team-section" id="team">
       <div class="container">
         <h2 class="section-title reveal">Meet the Team</h2>
