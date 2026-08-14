@@ -774,20 +774,13 @@
     .objective-card,
     .scope-card,
     .module-card,
-    .associate-card {
-      border-radius: var(--radius);
-      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
-    }
+   
 
     .info-card:hover,
     .team-card:hover,
     .objective-card:hover,
     .scope-card:hover,
     .module-card:hover,
-    .associate-card:hover {
-      box-shadow: var(--shadow);
-      transform: translateY(-5px);
-    }
 
     .info-card {
   padding: 30px 22px;
@@ -982,11 +975,6 @@
     }
 
     .team-card h3,
-    .associate-card h3 {
-      color: var(--navy);
-      font-size: 1.12rem;
-      line-height: 1.35;
-    }
 
     .institution {
       color: var(--muted);
@@ -1068,21 +1056,6 @@
     .avatar-reset:disabled {
       cursor: default;
       opacity: 0.42;
-    }
-
-    .associate-card {
-      background: #fbfcff;
-      border: 1px dashed rgba(13, 33, 69, 0.22);
-      margin: 30px auto 0;
-      max-width: 560px;
-      padding: 28px;
-    }
-
-    .associate-role {
-      color: var(--orange);
-      font-style: italic;
-      font-weight: 700;
-      margin-top: 10px;
     }
 
     .research-section {
@@ -1841,6 +1814,9 @@
 .research-section .section-portal-cta-inner p {
   color: rgba(255, 255, 255, 0.68);
 }
+.brand-identity-preview {
+  padding-bottom: 40px;
+}
 @media (max-width: 920px) {
   .nav-divider { display: none; }
 }
@@ -2007,15 +1983,15 @@
     <section class="stats-bar" aria-label="Project statistics">
       <div class="container stats-grid">
         <div class="stat reveal">
-          <strong>9+ Institutions</strong>
-          <span>Tamil Nadu & NCR</span>
+          <strong>Institutions</strong>
+          <span>Tamil Nadu</span>
         </div>
         <div class="stat reveal">
           <strong>5 Researchers</strong>
-          <span>+ Associates</span>
+          <span>Core Team</span>
         </div>
         <div class="stat reveal">
-          <strong>Since March 2026</strong>
+          <strong>2026</strong>
           <span>Active Study</span>
         </div>
       </div>
@@ -2083,11 +2059,8 @@
       <div class="container">
         <h2 class="section-title reveal">Meet the Team</h2>
         <span class="orange-rule reveal" style="margin-left:auto;margin-right:auto;" aria-hidden="true"></span>
-        <p class="subtitle reveal">Five minds. Two states. One mission.</p>
+        <p class="subtitle reveal">Five minds. One mission. Nation impact.</p>
         <div class="team-grid" id="team-grid-container" aria-label="Core team members">
-          <!-- Dynamically populated from GET /api/team-members -->
-        </div>
-        <div class="associate-row" id="associates-container" aria-label="Associate members">
           <!-- Dynamically populated from GET /api/team-members -->
         </div>
         <div class="section-portal-cta reveal">
@@ -2135,7 +2108,7 @@
         <div class="scope-grid">
           <article class="scope-card reveal">
             <h3>Offline Field Visits</h3>
-            <p>Thanjavur · Trichy</p>
+            <p>Thanjavur · Trichy · Kumbakonam</p>
           </article>
           <article class="scope-card reveal">
             <h3>Online Survey</h3>
@@ -2570,76 +2543,68 @@ window.addEventListener("load", () => {
         ? `<a class="linkedin" href="${linkedinUrl}" target="_blank" rel="noopener noreferrer" aria-label="${name} LinkedIn profile">in</a>`
         : "";
 
-      if (member.is_associate) {
-        el.className = "associate-card reveal";
-        el.innerHTML = `
-          ${avatarHtml}
-          <h3>${name}</h3>
-          <span class="badge">${role}</span><br>
-          ${linkedinBtn}
-        `;
-      } else {
-        el.className = "team-card reveal";
-        el.innerHTML = `
-          ${avatarHtml}
-          <h3>${name}</h3>
-          <span class="badge">${role}</span>
-          ${linkedinBtn}
-        `;
-      }
+      el.className = "team-card reveal";
+
+el.innerHTML = `
+  ${avatarHtml}
+  <h3>${name}</h3>
+  <span class="badge">${role}</span>
+  ${linkedinBtn}
+`;
 
       return el;
     };
 
     const loadTeamMembers = async () => {
-      const grid       = document.getElementById("team-grid-container");
-      const associates = document.getElementById("associates-container");
-      if (!grid) return;
+  const grid = document.getElementById("team-grid-container");
 
-      try {
-        const res = await fetch(`${API_BASE}/team-members?t=${Date.now()}`,
-  {
-    cache: "no-store"
-  }
-);        
-        const payload = await res.json();
-        if (!res.ok || !payload.success) throw new Error(payload.error || `API ${res.status}`);
+  if (!grid) return;
 
-        const members = Array.isArray(payload.data) ? payload.data : [];
-
-        // Render non-associates into the team grid.
-        // Filter: show only foundational members on main site.
-        // Core-only duplicates (e.g. vignesh-prakash-core, vishnupriyan-core)
-        // are excluded here — they belong to the team subdomain only.
-        grid.innerHTML = "";
-        members
-          .filter((m) => !m.is_associate && m.team_type == "foundational")
-          .forEach((m) => grid.appendChild(buildTeamCard(m)));
-
-        // Render associates
-        if (associates) {
-          associates.innerHTML = "";
-          members
-            .filter((m) => m.is_associate && m.team_type == "founding")
-            .forEach((m) => associates.appendChild(buildTeamCard(m)));
-          associates.classList.add("associate-row");
-        }
-
-        // Re-run reveal observer on all newly added cards
-        if (typeof revealObserver !== "undefined") {
-          document.querySelectorAll(".reveal:not(.visible)").forEach((el) =>
-            revealObserver.observe(el)
-          );
-        }
-
-      } catch (err) {
-        console.error("[loadTeamMembers]", err);
-        grid.innerHTML = '<p style="color:var(--muted);font-size:.9rem;grid-column:1/-1;'
-          + 'text-align:center;padding:32px 0;">Team data temporarily unavailable. '
-          + 'Please refresh the page.</p>';
+  try {
+    const res = await fetch(
+      `${API_BASE}/team-members?t=${Date.now()}`,
+      {
+        cache: "no-store"
       }
-    };
+    );
 
+    const payload = await res.json();
+
+    if (!res.ok || !payload.success) {
+      throw new Error(
+        payload.error || `API ${res.status}`
+      );
+    }
+
+    const members = Array.isArray(payload.data)
+      ? payload.data
+      : [];
+
+    grid.innerHTML = "";
+
+    members
+      .filter((m) => m.team_type == "founding")
+      .forEach((m) => {
+        grid.appendChild(buildTeamCard(m));
+      });
+
+    if (typeof revealObserver !== "undefined") {
+      document
+        .querySelectorAll(".reveal:not(.visible)")
+        .forEach((el) => revealObserver.observe(el));
+    }
+
+  } catch (err) {
+    console.error("[loadTeamMembers]", err);
+
+    grid.innerHTML =
+      '<p style="color:var(--muted);font-size:.9rem;' +
+      'grid-column:1/-1;text-align:center;padding:32px 0;">' +
+      'Team data temporarily unavailable. Please refresh the page.' +
+      '</p>';
+  }
+};
+    
     window.addEventListener("DOMContentLoaded", () => {
       // Team members load directly from the API — no admin gate.
       // Photos and member data update in the DB via the admin backend;
