@@ -1378,6 +1378,22 @@
       transform: translateY(0);
     }
 
+    .team-grid .team-card:last-child {
+  grid-column: 3 / span 2;
+}
+
+    @media (max-width: 920px) {
+  .team-grid .team-card:last-child {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 680px) {
+  .team-grid .team-card:last-child {
+    grid-column: auto;
+  }
+}
+
     @media (max-width: 920px) {
       .menu-toggle {
         display: inline-flex;
@@ -2582,16 +2598,21 @@ el.innerHTML = `
 
     grid.innerHTML = "";
 
+    // Main website:
+    // Show the unified core team only.
+    // Associates are intentionally excluded.
     members
-      .filter((m) => m.team_type == "founding")
-      .forEach((m) => {
-        grid.appendChild(buildTeamCard(m));
+      .filter((member) => !member.is_associate)
+      .forEach((member) => {
+        grid.appendChild(buildTeamCard(member));
       });
 
     if (typeof revealObserver !== "undefined") {
       document
         .querySelectorAll(".reveal:not(.visible)")
-        .forEach((el) => revealObserver.observe(el));
+        .forEach((el) => {
+          revealObserver.observe(el);
+        });
     }
 
   } catch (err) {
