@@ -2601,10 +2601,10 @@ el.innerHTML = `
     // Main website:
     // Show the unified core team only.
     // Associates are intentionally excluded.
-    members
-      .filter((member) => !member.is_associate)
-      .forEach((member) => {
-        grid.appendChild(buildTeamCard(member));
+   members
+          .filter((m) => m.team_type == "founding")
+          .forEach((m) => grid.appendChild(buildTeamCard(m)));
+
       });
 
     if (typeof revealObserver !== "undefined") {
