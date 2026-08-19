@@ -769,23 +769,6 @@
       margin-top: 42px;
     }
 
-    .info-card,
-    .team-card,
-    .objective-card,
-    .scope-card,
-    .module-card,
-   
-
-    .info-card:hover,
-    .team-card:hover,
-    .objective-card:hover,
-    .scope-card:hover,
-    .module-card:hover,
-
-    .info-card {
-  padding: 30px 22px;
-}
-
     .icon {
       align-items: center;
       background: rgba(232, 119, 34, 0.12);
@@ -1071,11 +1054,19 @@
     }
 
     .objective-card {
-      background: var(--white);
-      color: var(--text);
-      min-height: 178px;
-      padding: 30px;
-    }
+  background: var(--white);
+  color: var(--text);
+  min-height: 178px;
+  padding: 30px;
+  position: relative;
+  transition: box-shadow 220ms ease, border-color 220ms ease;
+  border: 1px solid transparent;
+}
+
+.objective-card:hover {
+  box-shadow: 0 12px 30px rgba(13, 33, 69, 0.12);
+  border-color: rgba(232, 119, 34, 0.28);
+}
 
     .objective-card h3 {
       color: var(--navy);
@@ -1368,15 +1359,26 @@
     }
 
     .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 700ms ease, transform 700ms ease;
-    }
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+    /* ── Stable Research Domain Cards ───────────────── */
+.research-section .objective-card,
+.research-section .scope-card {
+  transform: none;
+}
+
+.research-section .objective-card:hover,
+.research-section .scope-card:hover {
+  transform: none;
+}
 
     .team-grid .team-card:last-child {
   grid-column: 3 / span 2;
