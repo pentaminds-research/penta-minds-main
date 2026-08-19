@@ -2091,6 +2091,210 @@ Penta Minds · Updates are live and continuous
     <span></span>
   </div>
 </div>
+
+  <!-- =========================
+     PENTA MINDS MAINTENANCE / UPDATE NOTICE
+     Paste immediately after <body>
+     Remove entire block to disable
+========================= -->
+
+<div id="pm-update-notice" role="status" aria-label="Website update notice">
+
+  <style>
+    /* =========================================================
+       PENTA MINDS — TEMPORARY UPDATE NOTICE
+       Non-blocking top-of-site announcement
+    ========================================================= */
+
+    #pm-update-notice {
+      position: relative;
+      z-index: 99990;
+      width: 100%;
+      background: #0D2145;
+      border-bottom: 1px solid rgba(232, 119, 34, 0.45);
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    #pm-update-notice .pm-notice-inner {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    #pm-update-notice .pm-notice-icon {
+      width: 28px;
+      height: 28px;
+      flex: 0 0 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #E87722;
+    }
+
+    #pm-update-notice .pm-notice-icon svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
+    #pm-update-notice .pm-notice-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      line-height: 1.45;
+    }
+
+    #pm-update-notice .pm-notice-label {
+      color: #E87722;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    #pm-update-notice .pm-notice-message {
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    #pm-update-notice .pm-notice-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-left: 4px;
+      padding: 5px 10px;
+      border: 1px solid rgba(232, 119, 34, 0.35);
+      border-radius: 999px;
+      background: rgba(232, 119, 34, 0.08);
+      color: #d8dde6;
+      font-size: 0.72rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    #pm-update-notice .pm-status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #E87722;
+      box-shadow: 0 0 0 4px rgba(232, 119, 34, 0.10);
+      animation: pmNoticePulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pmNoticePulse {
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.45;
+      }
+    }
+
+    @media (max-width: 680px) {
+      #pm-update-notice .pm-notice-inner {
+        width: min(100% - 24px, 1120px);
+        min-height: 0;
+        padding: 10px 0;
+        gap: 9px;
+      }
+
+      #pm-update-notice .pm-notice-icon {
+        width: 22px;
+        height: 22px;
+        flex-basis: 22px;
+      }
+
+      #pm-update-notice .pm-notice-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      #pm-update-notice .pm-notice-content {
+        justify-content: flex-start;
+        text-align: left;
+        gap: 3px 8px;
+      }
+
+      #pm-update-notice .pm-notice-label {
+        font-size: 0.68rem;
+      }
+
+      #pm-update-notice .pm-notice-message {
+        font-size: 0.78rem;
+      }
+
+      #pm-update-notice .pm-notice-status {
+        margin-left: 0;
+        padding: 4px 8px;
+        font-size: 0.66rem;
+      }
+    }
+  </style>
+
+  <div class="pm-notice-inner">
+
+    <div class="pm-notice-icon" aria-hidden="true">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 3v3M12 18v3M3 12h3M18 12h3M5.64 5.64l2.12 2.12M16.24 16.24l2.12 2.12M18.36 5.64l-2.12 2.12M7.76 16.24l-2.12 2.12"
+          stroke="#E87722"
+          stroke-width="1.8"
+          stroke-linecap="round"
+        />
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+          stroke="#E87722"
+          stroke-width="1.8"
+        />
+      </svg>
+    </div>
+
+    <div class="pm-notice-content">
+
+      <span class="pm-notice-label">
+        Updates Notice
+      </span>
+
+      <span class="pm-notice-message">
+        Penta Minds is currently undergoing maintenance, content updates,
+        and continuous improvements.
+      </span>
+
+      <span class="pm-notice-status">
+        <span class="pm-status-dot"></span>
+        Updates in Progress
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     END PENTA MINDS MAINTENANCE / UPDATE NOTICE
+========================= -->
+
+  
  <header class="site-header">
     <nav class="container nav-wrap" aria-label="Primary navigation">
       <a class="brand" href="#home" aria-label="Penta Minds home">
