@@ -1021,7 +1021,7 @@
       margin-bottom: 10px;
     }
 
-    .research-subhead {
+    /* .research-subhead {
       color: var(--white);
       font-family: var(--heading);
       font-size: clamp(1.8rem, 3vw, 2.55rem);
@@ -1075,7 +1075,7 @@
     .scope-card p {
       color: rgba(255, 255, 255, 0.74);
     }
-
+ */
 
     .toolkit-section {
       background: var(--white);
@@ -1749,8 +1749,9 @@
 }
 .section-portal-cta {
   border-top: 1px solid var(--line);
-  margin-top: 48px;
+  margin-top: 20px;
   padding-top: 32px;
+  margin-left: 40px;
 }
 .section-portal-cta-inner {
   align-items: center;
@@ -1772,6 +1773,7 @@
   min-height: 44px;
   padding: 10px 20px;
   white-space: nowrap;
+  margin-right: 40px;
 }
 .research-section .section-portal-cta {
   border-top-color: rgba(255, 255, 255, 0.16);
@@ -1853,3 +1855,5 @@
       content: "";
       display: none;
     }
+
+  
