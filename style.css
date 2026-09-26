@@ -1329,7 +1329,7 @@
 }
 
     .team-grid .team-card:last-child {
-  grid-column: 3 / span 2;
+  grid-column: span 2;
 }
 
     @media (max-width: 920px) {
