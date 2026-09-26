@@ -1784,36 +1784,41 @@
 .brand-identity-preview {
   padding-bottom: 40px;
 }
-.india-text {
-    font-size: 48px;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-    background-color: #1a1a1a; /* Dark background so white 'd' is visible */
-    padding: 10px 20px;
-    display: inline-block;
-  }
-  .orange {
-    color: #FF9933; /* Saffron/Orange */
-  }
-  .white {
-    color: #FFFFFF; /* White */
-  }
-  .green {
-    color: #138808; /* India Green */
-  }
-.pmrc-council {
+
+/* ── Tiranga Font Styling for "India" ── */
+.india-tiranga {
+  display: inline-flex;
+  font-weight: 800;
+  letter-spacing: 0.02em;
 }
-font-family: 'Montserrat', sans-serif;
-font-size: 28px;
-font-weight: 600;
-display: flex;
-align-items: center;
-.pmrc-council .penta-minds {
-color: #002D62;
-.pmrc-council .council-text {
-.pmr
-color: #FF6600;
+
+.india-tiranga .tiranga-saffron {
+  color: #FF9933; /* Saffron */
 }
+
+.india-tiranga .tiranga-white {
+  color: #FFFFFF; /* White */
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6); /* Soft shadow so white is readable on light backgrounds */
+}
+
+.india-tiranga .tiranga-green {
+  color: #138808; /* India Green */
+}
+
+/* ── PMRC Split Colors Styling ── */
+.pmrc-title {
+  font-weight: 700;
+  display: inline;
+}
+
+.pmrc-navy {
+  color: var(--navy); /* Dark Navy Blue (#0D2145) */
+}
+
+.pmrc-orange {
+  color: var(--orange); /* Vibrant Orange (#E87722) */
+}
+
 @media (max-width: 920px) {
   .nav-divider { display: none; }
 }
