@@ -764,6 +764,7 @@
       border: 1px solid var(--line);
       display: flex;
       flex-direction: column;
+      position:relative;  
       grid-column: span 3;
       min-height: 330px;
       padding: 28px 22px;
