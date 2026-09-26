@@ -274,6 +274,7 @@ Penta Minds · Updates are live and continuous
     #pm-update-notice {
       position: relative;
       z-index: 99990;
+      height: 90px;
       width: 100%;
       background: #0D2145;
       border-bottom: 1px solid rgba(232, 119, 34, 0.45);
@@ -284,6 +285,8 @@ Penta Minds · Updates are live and continuous
     #pm-update-notice .pm-notice-inner {
       width: min(1120px, calc(100% - 32px));
       margin: 0 auto;
+      top: 20px;
+      position: relative;
       min-height: 54px;
       display: flex;
       align-items: center;
@@ -514,7 +517,7 @@ Penta Minds · Updates are live and continuous
         <div class="objectives-grid">
           <article class="objective-card reveal"><h3>Research</h3><p>Conduct evidence-based research into emerging AI technologies, systems, behaviours, applications, and societal implications.</p></article>
           <article class="objective-card reveal"><h3>Education</h3><p>Make AI understandable and accessible through literacy, educational resources, research communication, and knowledge sharing.</p></article>
-          <article class="objective-card reveal"><h3>Responsibility</h3><p>Promote governance, ethics, safety, accountability, transparency, accessibility, and human-centred adoption.</p></article>
+          <article class="objective-card reveal" id="re"><h3>Responsibility</h3><p>Promote governance, ethics, safety, accountability, transparency, accessibility, and human-centred adoption.</p></article>
         </div>
       </div>
     </section>
@@ -565,13 +568,14 @@ Penta Minds · Updates are live and continuous
             <p>Researching responsible AI development and adoption across its full lifecycle.</p>
           </article>
         </div>
-
-        <div class="objectives-grid" style="margin-top:24px;">
-          <article class="objective-card reveal"><h3>Emerging Technologies</h3><p>Identifying emerging developments that raise meaningful research questions for AI and society.</p></article>
+          <article class="objective-card reveal" id="ob">
+            <h3>Emerging Technologies</h3>
+            <p>Identifying emerging developments that raise meaningful research questions for AI and society.</p>
+          </article>
+        
         </div>
-        </div>
-        <div class="section-portal-cta reveal">
-          <div class="section-portal-cta-inner">
+        <div class="section-portal-cta reveal" id ="ct">
+          <div class="section-portal-cta-inner" id = "sec">
             <p>Explore our research, publications, datasets, research reports, documentation, and opportunities to collaborate with our research programmes.</p>
             <button class="btn btn-orange" onclick="redirectTo('https://research.pentaminds.in', 'Entering Research Division…')">Research Division →</button>
           </div>
@@ -586,7 +590,7 @@ Penta Minds · Updates are live and continuous
         <h2 class="section-title">Flagship Research Projects</h2>
         <span class="orange-rule" aria-hidden="true"></span>
       </div>
-      <div class="projects-ecosystem-cta">
+      <div class="projects-ecosystem-cta" >
         <p>Explore our research projects in depth, including the methodology, timelines, affiliations, participation, and published outputs.</p>
         <button class="btn btn-orange" onclick="redirectTo('https://projects.pentaminds.in', 'Entering Projects Division…')">Explore All Projects →</button>
       </div>
@@ -733,12 +737,12 @@ Penta Minds · Updates are live and continuous
       </a>
       <ul class="footer-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="javascript:void(0)" onclick="redirectTo('https://research.pentaminds.in', 'Entering Research Division…')">Research </a></li>
-        <li><a href="javascript:void(0)" onclick="redirectTo('https://team.pentaminds.in', 'Entering Team Division…')">Team </a></li>
-        <li><a href="#ecosystem">Ecosystem</a></li>
+        <li><a href="#about">Who We Are</a></li>
+        <li><a href="javascript:void(0)" onclick="redirectTo('https://research.pentaminds.in', 'Entering Research Division…')">What We Do </a></li>
+        <li><a href="javascript:void(0)" onclick="redirectTo('https://team.pentaminds.in', 'Entering Team Division…')">Meet The Team </a></li>
+        <li><a href="#ecosystem">Our Ecosystem</a></li>
         <li><a href="https://go.pentaminds.in/notice">Brand Policy</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">Connect Wit Us</a></li>
       </ul>
       <span style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
   <span>© 2026 Penta Minds. All Rights Reserved.</span>
