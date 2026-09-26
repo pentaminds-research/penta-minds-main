@@ -753,7 +753,7 @@
     }
 
     .team-grid {
-      display: inline-block;
+      display: grid;
       gap: 24px;
       grid-template-columns: repeat(6, 1fr);
       margin-top: 46px;
