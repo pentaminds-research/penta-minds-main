@@ -1860,6 +1860,141 @@
   color: var(--orange); /* Vibrant Orange (#E87722) */
 }
 
+/* =========================================
+   MAIN SITE — CONTACT SECTION
+   ========================================= */
+
+.contact-section {
+  background: var(--navy);
+  color: white;
+}
+
+.contact-container {
+  text-align: center;
+}
+
+
+/* Heading */
+
+.contact-container .section-title {
+  color: white;
+  font-family: var(--heading);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.05;
+}
+
+
+/* Description */
+
+.contact-description {
+  max-width: 900px;
+  margin: 24px auto 0;
+
+  color: rgba(255, 255, 255, .72);
+
+  font-family: var(--body);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+
+/* Email */
+
+.contact-container .email-link {
+  display: inline-block;
+
+  margin-top: 20px;
+  margin-bottom: 28px;
+
+  color: var(--orange);
+
+  font-family: var(--heading);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.08;
+
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+
+/* Social buttons */
+
+.contact-container .social-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+
+/* Social button */
+
+.contact-container .social-btn {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+
+  min-width: 36px;
+  min-height: 36px;
+
+  padding: 7px 12px;
+
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 999px;
+
+  color: white;
+
+  font-family: var(--body);
+  font-size: 1rem;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    background .2s ease,
+    border-color .2s ease,
+    color .2s ease;
+}
+
+.contact-container .social-btn:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+}
+
+
+/* Affiliation */
+
+.contact-container .affiliation-line {
+  margin-top: 24px;
+
+  color: rgba(255, 255, 255, .72);
+
+  font-family: var(--body);
+  font-size: .92rem;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 680px) {
+
+  .contact-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .contact-container .social-row {
+    justify-content: center;
+  }
+
+}
+
 @media (max-width: 920px) {
   .nav-divider { display: none; }
 }
