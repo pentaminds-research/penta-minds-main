@@ -1502,6 +1502,26 @@
       }
     }
 
+.affiliation-line {
+  margin-top: 24px;
+  font-weight: 800;
+}
+
+.pmrc-brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3em;
+  font-weight: 800;
+}
+
+.pmrc-brand-main {
+  color: #FFFFFF;
+}
+
+.pmrc-brand-council {
+  color: #E87722;
+}
+
     @media (max-width: 920px) {
       .hero-layout {
         grid-template-columns: 1fr;
