@@ -1801,6 +1801,19 @@
   .green {
     color: #138808; /* India Green */
   }
+.pmrc-council {
+}
+font-family: 'Montserrat', sans-serif;
+font-size: 28px;
+font-weight: 600;
+display: flex;
+align-items: center;
+.pmrc-council .penta-minds {
+color: #002D62;
+.pmrc-council .council-text {
+.pmr
+color: #FF6600;
+}
 @media (max-width: 920px) {
   .nav-divider { display: none; }
 }
