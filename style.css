@@ -1977,7 +1977,14 @@
   font-weight: 700;
 }
 
+.contact-container .email-link {
+  color: var(--orange);
+  transition: color 0.2s ease;
+}
 
+.contact-container .email-link:hover {
+  color: #FFFFFF;
+}
 /* =========================================
    MOBILE
    ========================================= */
