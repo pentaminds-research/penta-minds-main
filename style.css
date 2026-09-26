@@ -12,6 +12,10 @@
       --heading: "Playfair Display", Georgia, serif;
       --body: "Inter", Arial, sans-serif;
     }
+  
+
+
+
 
     * {
       box-sizing: border-box;
@@ -117,7 +121,7 @@
       position: fixed;
       inset: 0 0 auto 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.94);
+      /* background: rgba(255, 255, 255, 0.94); */
       border-bottom: 1px solid rgba(13, 33, 69, 0.08);
       box-shadow: 0 10px 30px rgba(13, 33, 69, 0.08);
       backdrop-filter: blur(16px);
@@ -312,6 +316,8 @@
     /* ── Hero Logo/Image Panel (left) ───────────── */
     .hero-logo-panel {
       position: relative;
+      left: 145%;
+      top: -70px;
     }
 
     .hero-logo-frame {
@@ -395,6 +401,7 @@
     .hero-copy {
       position: relative;
       z-index: 2;
+      right: 100%;
     }
 
     .eyebrow-badge {
@@ -760,11 +767,11 @@
     }
 
     .team-card {
+      display: inline-block;
       background: var(--white);
       border: 1px solid var(--line);
       display: flex;
       flex-direction: column;
-      position:relative;  
       grid-column: span 2;
       min-height: 330px;
       padding: 28px 22px;
@@ -775,7 +782,7 @@
     }
 
     .team-card:nth-child(5) {
-      grid-column: 3/span 2;
+      grid-column: 4 / span 2;
     }
 
     .ecosystem-tree{
@@ -992,6 +999,7 @@
     .research-section {
       background: var(--navy);
       color: var(--white);
+      width: 100%;
     }
 
     .objectives-grid {
@@ -1015,6 +1023,31 @@
   box-shadow: 0 12px 30px rgba(13, 33, 69, 0.12);
   border-color: rgba(232, 119, 34, 0.28);
 }
+    #re{
+      position: relative;
+      left: 50%;
+    }
+
+    #ob
+    {
+      position: relative;
+      left: 300px;
+      width: 50%;
+      top: 20px;
+      
+    }
+    #sec{
+      position: relative;
+      left: 5%;
+      width:95%;
+    }
+    #ct{
+      position: relative;
+      top: 20px;
+      border-width: 1px;
+      
+      
+    }
 
     .objective-card h3 {
       color: var(--navy);
@@ -1218,17 +1251,18 @@
     }
 
     .email-link {
-      color: var(--white);
+      color: var(--orange);
       display: inline-flex;
-      font-size: clamp(1.05rem, 3vw, 1.45rem);
-      font-weight: 800;
+      position: relative;
+      font-size: clamp(1.35rem, 3vw, 1.50rem);
+      font-weight: 850;
       margin-top: 24px;
       transition: color 200ms ease;
       word-break: break-word;
     }
 
     .email-link:hover {
-      color: var(--orange);
+      color: var(--white);
     }
 
     .social-row {
@@ -1329,7 +1363,7 @@
 }
 
     .team-grid .team-card:last-child {
-  grid-column: span 2;
+  grid-column:span 2;
 }
 
     @media (max-width: 920px) {
@@ -1778,6 +1812,9 @@
 }
 .research-section .section-portal-cta {
   border-top-color: rgba(255, 255, 255, 0.16);
+  width: 70%;
+  position: relative;
+  left: 13%;
 }
 .research-section .section-portal-cta-inner p {
   color: rgba(255, 255, 255, 0.68);
@@ -1785,6 +1822,9 @@
 .brand-identity-preview {
   padding-bottom: 40px;
 }
+
+
+
 
 /* ── Tiranga Font Styling for "India" ── */
 .india-tiranga {
