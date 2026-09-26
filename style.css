@@ -1784,6 +1784,23 @@
 .brand-identity-preview {
   padding-bottom: 40px;
 }
+.india-text {
+    font-size: 48px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Dark background so white 'd' is visible */
+    padding: 10px 20px;
+    display: inline-block;
+  }
+  .orange {
+    color: #FF9933; /* Saffron/Orange */
+  }
+  .white {
+    color: #FFFFFF; /* White */
+  }
+  .green {
+    color: #138808; /* India Green */
+  }
 @media (max-width: 920px) {
   .nav-divider { display: none; }
 }
