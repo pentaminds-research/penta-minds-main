@@ -13,10 +13,6 @@
       --body: "Inter", Arial, sans-serif;
     }
   
-
-
-
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -418,7 +414,7 @@
     }
 
     .hero h1 {
-      color: var(--white);
+      color: var(--orange);
       font-family: "Poppins", "Inter", sans-serif;
       font-size: clamp(2.4rem, 5vw, 5rem);
       font-weight: 900;
@@ -434,7 +430,6 @@
       letter-spacing: 0.01em;
       line-height: 1.35;
       margin-top: 16px;
-      white-space: nowrap;
     }
 
     .hero-kicker {
@@ -1503,28 +1498,6 @@
       }
     }
 
-.affiliation-line {
-  margin-top: 24px;
-  font-weight: 800;
-}
-
-.pmrc-brand {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.3em;
-font-size: clamp(2.2rem, 7vw, 4.6rem);
-font-weight: 800;
-line-height: 1;
-}
-
-.pmrc-brand-main {
-  color: #FFFFFF;
-}
-
-.pmrc-brand-council {
-  color: #E87722;
-}
-
     @media (max-width: 920px) {
       .hero-layout {
         grid-template-columns: 1fr;
@@ -1883,148 +1856,6 @@ line-height: 1;
   color: var(--orange); /* Vibrant Orange (#E87722) */
 }
 
-/* =========================================
-   MAIN SITE — CONTACT SECTION
-   ========================================= */
-
-.contact-section {
-  background: var(--navy);
-  color: white;
-}
-
-.contact-container {
-  text-align: center;
-}
-
-
-/* Heading */
-
-.contact-container .section-title {
-  color: white;
-  font-family: var(--heading);
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  line-height: 1.05;
-}
-
-
-/* Description */
-
-.contact-description {
-  max-width: 900px;
-  margin: 24px auto 0;
-
-  color: rgba(255, 255, 255, .72);
-
-  font-family: var(--body);
-  font-size: 1.15rem;
-  font-weight: 700;
-  line-height: 1.6;
-}
-
-
-/* Email */
-
-.contact-container .email-link {
-  display: inline-block;
-
-  margin-top: 20px;
-  margin-bottom: 28px;
-
-  color: var(--orange);
-
-  font-family: var(--heading);
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: 800;
-  line-height: 1.08;
-
-  overflow-wrap: anywhere;
-  text-decoration: none;
-}
-
-
-/* Social buttons */
-
-.contact-container .social-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
-
-
-/* Social button */
-
-.contact-container .social-btn {
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
-
-  min-width: 36px;
-  min-height: 36px;
-
-  padding: 7px 12px;
-
-  border: 1px solid rgba(255, 255, 255, .18);
-  border-radius: 999px;
-
-  color: white;
-
-  font-family: var(--body);
-  font-size: 1rem;
-  font-weight: 800;
-
-  text-decoration: none;
-
-  transition:
-    background .2s ease,
-    border-color .2s ease,
-    color .2s ease;
-}
-
-.contact-container .social-btn:hover {
-  background: var(--orange);
-  border-color: var(--orange);
-  color: white;
-}
-
-
-/* Affiliation */
-
-.contact-container .affiliation-line {
-  margin-top: 24px;
-
-  color: rgba(255, 255, 255, .72);
-
-  font-family: var(--body);
-  font-size: .92rem;
-  font-weight: 700;
-}
-
-.contact-container .email-link {
-  color: var(--orange);
-  transition: color 0.2s ease;
-}
-
-.contact-container .email-link:hover {
-  color: #FFFFFF;
-}
-/* =========================================
-   MOBILE
-   ========================================= */
-
-@media (max-width: 680px) {
-
-  .contact-description {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  .contact-container .social-row {
-    justify-content: center;
-  }
-
-}
-
 @media (max-width: 920px) {
   .nav-divider { display: none; }
 }
@@ -2098,3 +1929,114 @@ line-height: 1;
     }
 
   
+
+/* =====================================================================
+   RESPONSIVE OVERRIDES: all phones & tablets
+   Kept last so they win over the desktop positioning offsets above.
+   Breakpoints: 1100 tablet-landscape · 920 tablet · 680 phone ·
+                480 small phone · 360 very small · short landscape
+   ===================================================================== */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+/* Tablet landscape: hero left/right swap used % offsets that clipped here */
+@media (min-width: 921px) and (max-width: 1100px) {
+  .hero-layout { grid-template-columns: minmax(0, 1.25fr) minmax(260px, 1fr); }
+  .hero-copy { order: 1; right: 0; }
+  .hero-logo-panel { order: 2; left: 0; top: 0; }
+}
+
+/* Tablet and below */
+@media (max-width: 920px) {
+  .hero-logo-panel { left: 0; top: 0; }       /* was left:145% -> off-screen */
+  .hero-copy { right: 0; }                    /* was right:100% -> off-screen */
+  .nav-wrap { gap: 12px; }
+  .nav-links { max-height: calc(100vh - 78px); max-height: calc(100dvh - 78px); overflow-y: auto; }
+  .split, .toolkit-grid { gap: 28px; }
+  .dev-notice-banner { width: calc(100% - 40px); }
+
+  /* centred CTA / card offsets that only suit desktop */
+  .section-portal-cta { margin-left: 0; }
+  .section-portal-cta-inner .btn { margin-right: 0; }
+  .research-section .section-portal-cta { width: min(1120px, calc(100% - 40px)); left: 0; margin: 20px auto 0; }
+  #ct { top: 0; }
+  #sec { left: 0; width: 100%; }
+  #ob { left: 0; top: 0; width: calc(50% - 12px); margin: 24px auto 0; }
+
+  /* footer: inline right-alignment -> centred */
+  .footer-grid { justify-items: center; }
+  .footer-grid > span { align-items: center !important; }
+  .footer-grid .brand { align-items: center; }
+}
+
+/* Tablet portrait: centre an odd last team card, 2-up ecosystem */
+@media (min-width: 681px) and (max-width: 920px) {
+  .team-grid .team-card:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 12px); }
+}
+@media (min-width: 561px) and (max-width: 920px) {
+  .ecosystem-branches { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Phones */
+@media (max-width: 680px) {
+  body { overflow-wrap: break-word; }
+  .hero-layout { gap: 28px; }
+  .hero-logo-frame { max-width: min(220px, 62vw); }
+  #re { left: 0; }                            /* was left:50% -> overflow */
+  #ob { width: 100%; margin-top: 24px; }      /* was left:300px -> off-screen */
+  .dev-notice-banner { width: calc(100% - 28px); padding: 14px !important; }
+  .research-section .section-portal-cta { width: calc(100% - 28px); }
+  .section-portal-cta-inner p { flex: 0 0 auto; width: 100%; }  /* basis:300px was a 300px-tall box in column mode */
+  .objectives-grid { gap: 18px; }
+  .objective-card { min-height: 0; padding: 24px 22px; }
+  .objective-card h3 { font-size: 1.2rem; }
+  .team-card { min-height: 0; }
+  .projects-section-header { gap: 24px; }
+  .footer-grid { gap: 20px; padding: 28px 0; }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .section { padding: 60px 0; }
+  .section-title { font-size: clamp(1.85rem, 9vw, 2.4rem); }
+  .eyebrow-badge { font-size: 0.66rem; letter-spacing: 0.08em; text-align: center; border-radius: 18px; padding: 7px 12px; }
+  .hero-kicker { font-size: 0.88rem; }
+  .brand-main { font-size: 1.15rem; }
+  .brand-sub { font-size: 0.64rem; }
+  .project-card-header, .project-body { padding: 20px 16px; }
+  .project-meta-grid, .project-sections { grid-template-columns: 1fr; }
+  .projects-ecosystem-cta { padding: 20px 18px; }
+  .license { border-radius: 14px; line-height: 1.45; }
+  .ecosystem-root { font-size: 1.35rem; padding: 18px 32px; }
+  .division-card { min-height: 0; padding: 18px 16px; }
+  .email-link { font-size: 1.15rem; }
+}
+
+/* Very small phones (iPhone SE, Galaxy Fold, 320-360px) */
+@media (max-width: 360px) {
+  .container { width: calc(100% - 24px); }
+  .brand-main { font-size: 1.05rem; }
+  .menu-toggle { width: 40px; height: 40px; }
+  .btn { padding: 12px 16px; font-size: 0.95rem; }
+  .hero h1 { font-size: 1.85rem; }
+  .eyebrow-badge { font-size: 0.62rem; }
+  .team-card { padding: 24px 16px; }
+  .footer-links { grid-template-columns: 1fr; }
+  .social-btn { flex: 1 1 100%; justify-content: center; }
+}
+
+/* Short landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero { min-height: auto; padding: 100px 0 56px; }
+  .hero-logo-frame { max-width: 200px; }
+  .section { padding: 56px 0; }
+}
+
+/* Mobile browsers: 100vh includes the hidden address bar */
+@supports (min-height: 100svh) {
+  @media (max-width: 920px) { .hero { min-height: 100svh; } }
+}
+
+/* Touch screens: no sticky hover lift */
+@media (hover: none) {
+  .btn:hover, .social-btn:hover, .division-card:hover, .project-card:hover { transform: none; }
+}
